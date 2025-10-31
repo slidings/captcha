@@ -129,7 +129,7 @@ def main():
     # Continue from the latest one
     # ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
 
-    # Continue from the hand picked best one
+    #Continue from the hand picked best one
     ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
 
     if ckpt_path:

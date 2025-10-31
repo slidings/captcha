@@ -9,7 +9,7 @@ class ConvBlock(nn.Module):
         super().__init__()
         self.net = nn.Sequential(
             nn.Conv2d(cin, cout, k, s, p, bias=False),
-            nn.BatchNorm2d(cout),
+            nn.InstanceNorm2d(cout, affine=True),
             nn.ReLU(inplace=True)
         )
     def forward(self, x): return self.net(x)
