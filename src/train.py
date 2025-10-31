@@ -6,6 +6,8 @@ import time
 import torch
 import torch.nn as nn
 from torch.optim.lr_scheduler import ExponentialLR
+from torch.optim.lr_scheduler import ReduceLROnPlateau
+from torch.cuda.amp import autocast, GradScaler
 from torch.utils.data import DataLoader, random_split
 from tqdm import tqdm
 
@@ -128,18 +130,29 @@ def main():
     # ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
 
     # Continue from the hand picked best one
-    #ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
+    ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
 
-    # if ckpt_path:
-    #     print(f"Loading latest checkpoint: {ckpt_path}")
-    #     ckpt = torch.load(ckpt_path, map_location=device)
-    #     model.load_state_dict(ckpt["model"])
-    # else:
-    #     print("No checkpoint found — training from scratch.")
+    if ckpt_path:
+        print(f"Loading latest checkpoint: {ckpt_path}")
+        ckpt = torch.load(ckpt_path, map_location=device)
+        model.load_state_dict(ckpt["model"])
+    else:
+        print("No checkpoint found — training from scratch.")
 
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=cfg["train"]["lr"], weight_decay=cfg["train"]["weight_decay"])
-    scheduler = ExponentialLR(optimizer, gamma=cfg["train"].get("lr_decay", 1.0))
+    
+    # Scheduler based on time
+    #scheduler = ExponentialLR(optimizer, gamma=cfg["train"].get("lr_decay", 1.0))
+
+    # Scheduler based on training
+    scheduler = ReduceLROnPlateau(
+        optimizer,
+        mode="min",      # because lower CER is better
+        factor=0.5,      # reduce LR by half when plateauing
+        patience=2,      # wait 2 epochs before reducing
+    )
+
     ctc_loss = nn.CTCLoss(blank=BLANK, zero_infinity=True)
 
     os.makedirs(cfg["log"]["ckpt_dir"], exist_ok=True)
@@ -184,8 +197,8 @@ def main():
         cer, exact, count = evaluate(model, val_loader, device)
         print(f"Epoch {epoch}: CER={cer:.3f}, Exact={exact:.3f} (N={count})")
 
-        # Decay learning rate
-        scheduler.step()
+        # Decay learning rate, remove cer if using by time interval.
+        scheduler.step(cer)
 
         # --- Save checkpoint ---
         ckpt_path = os.path.join(cfg["log"]["ckpt_dir"], f"epoch{epoch:02d}.pt")
