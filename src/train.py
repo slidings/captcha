@@ -5,6 +5,7 @@ import math
 import time
 import torch
 import torch.nn as nn
+from torch.optim.lr_scheduler import ExponentialLR
 from torch.utils.data import DataLoader, random_split
 from tqdm import tqdm
 
@@ -31,6 +32,18 @@ def levenshtein(a: str, b: str) -> int:
             )
     return dp[-1][-1]
 
+def find_latest_checkpoint(dir_path):
+    ckpts = [f for f in os.listdir(dir_path) if f.startswith("epoch") and f.endswith(".pt")]
+    if not ckpts:
+        return None
+    ckpts.sort(key=lambda x: int(x.replace("epoch", "").replace(".pt", "")))
+    return os.path.join(dir_path, ckpts[-1])
+
+def find_best_checkpoint(dir_path):
+    best_ckpt = os.path.join(dir_path, "best.pt")
+    if os.path.isfile(best_ckpt):
+        return best_ckpt
+    return None
 
 # ==========================
 # Evaluate (with samples)
@@ -111,7 +124,22 @@ def main():
         dropout=cfg["model"]["dropout"]
     ).to(device)
 
+    # Continue from the latest one
+    # ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
+
+    # Continue from the hand picked best one
+    #ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
+
+    # if ckpt_path:
+    #     print(f"Loading latest checkpoint: {ckpt_path}")
+    #     ckpt = torch.load(ckpt_path, map_location=device)
+    #     model.load_state_dict(ckpt["model"])
+    # else:
+    #     print("No checkpoint found — training from scratch.")
+
+
     optimizer = torch.optim.AdamW(model.parameters(), lr=cfg["train"]["lr"], weight_decay=cfg["train"]["weight_decay"])
+    scheduler = ExponentialLR(optimizer, gamma=cfg["train"].get("lr_decay", 1.0))
     ctc_loss = nn.CTCLoss(blank=BLANK, zero_infinity=True)
 
     os.makedirs(cfg["log"]["ckpt_dir"], exist_ok=True)
@@ -155,6 +183,9 @@ def main():
         # --- Validate after each epoch ---
         cer, exact, count = evaluate(model, val_loader, device)
         print(f"Epoch {epoch}: CER={cer:.3f}, Exact={exact:.3f} (N={count})")
+
+        # Decay learning rate
+        scheduler.step()
 
         # --- Save checkpoint ---
         ckpt_path = os.path.join(cfg["log"]["ckpt_dir"], f"epoch{epoch:02d}.pt")
