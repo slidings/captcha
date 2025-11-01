@@ -21,8 +21,7 @@ class CRNN(nn.Module):
         self.cnn = nn.Sequential(
             ConvBlock(3, 64),   nn.MaxPool2d(2, 2),      # /2
             ConvBlock(64,128),  nn.MaxPool2d(2, 2),      # /4
-            ConvBlock(128,256),
-            ConvBlock(256,cnn_out)
+            ConvBlock(128,cnn_out),
         )
         # BiLSTM over width dimension
         self.bi_lstm = nn.LSTM(input_size=cnn_out, hidden_size=lstm_hidden,

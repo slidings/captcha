@@ -1,4 +1,5 @@
 # src/train.py
+# Run with python -m src.train
 import os
 import yaml
 import math

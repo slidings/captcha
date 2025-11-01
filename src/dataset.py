@@ -29,7 +29,7 @@ class CaptchaDataset(Dataset):
             raise RuntimeError(f"Failed to read image: {path}")
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-        # --- NEW: basic preprocessing ---
+        # --- Gray scale training if specified ---
         if self.grayscale:
             img = basic_preprocess(img)
 
