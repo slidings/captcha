@@ -3,18 +3,44 @@ import os
 import glob
 import cv2
 import torch
+import numpy as np
 from torch.utils.data import Dataset
 from typing import List, Tuple, Dict
 from .utils import parse_label_from_name
 from .vocab import encode_label
 from .transforms import keep_aspect_resize_pad, to_float_tensor, basic_preprocess
+from torchvision import transforms
 
 class CaptchaDataset(Dataset):
-    def __init__(self, root_dir: str, img_height: int = 32, max_width: int = 256, grayscale: bool = False):
+    def __init__(self, root_dir: str, img_height: int = 32, max_width: int = 256, grayscale: bool = False,
+                 is_train: bool = False): # Flag to control augmentation
+        
         self.paths = sorted(glob.glob(os.path.join(root_dir, "*.*")))
         self.h = img_height
         self.max_w = max_width
         self.grayscale = grayscale
+        
+        self.is_train = is_train
+        
+        # Define the augmentation pipeline
+        if self.is_train:
+            # We must use ToPILImage and ToTensor for torchvision transforms
+            self.aug_transform = transforms.Compose([
+                transforms.ToPILImage(),
+                # Add color jitter since we know color is important
+                transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.3, hue=0.1),
+                
+                # Add affine transforms: rotation, shear, and translation
+                transforms.RandomAffine(degrees=5, translate=(0.1, 0.1), shear=10),
+                
+                # Add blur as a form of noise
+                transforms.GaussianBlur(kernel_size=(3, 3), sigma=(0.1, 1.0)),
+                
+                # Convert back to a tensor-like numpy array (will be done in to_float_tensor)
+                # transforms.ToTensor() # We will do our own tensor conversion
+            ])
+        else:
+            self.aug_transform = None
 
     def __len__(self):
         return len(self.paths)
@@ -22,31 +48,39 @@ class CaptchaDataset(Dataset):
     def __getitem__(self, idx: int) -> Dict:
         path = self.paths[idx]
         label_str = parse_label_from_name(path)
-
-
+        
         img = cv2.imread(path, cv2.IMREAD_COLOR)
         if img is None:
             raise RuntimeError(f"Failed to read image: {path}")
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # Convert to RGB for PIL
 
-        # --- Gray scale training if specified ---
         if self.grayscale:
             img = basic_preprocess(img)
 
-        # resize + pad
+        # resize + pad (from transforms.py)
         img_resized, true_w = keep_aspect_resize_pad(img, self.h, self.max_w)
+        
+        # --- APPLY AUGMENTATION ---
+        # We must convert to PIL Image for torchvision transforms, then back
+        if self.aug_transform:
+            # Apply the transform pipeline
+            img_aug_pil = self.aug_transform(img_resized)
+            # Convert PIL image back to OpenCV (numpy) format
+            img_resized = np.array(img_aug_pil) 
+        # --- END AUGMENTATION ---
+
+        # Convert to float tensor (CHW, normalized)
         tensor = to_float_tensor(img_resized)
 
         label_ids = encode_label(label_str)
-
+        
         sample = {
-            "image": torch.from_numpy(tensor),          # (C,H,W)
+            "image": torch.from_numpy(tensor),
             "label_ids": torch.tensor(label_ids, dtype=torch.long),
             "label_str": label_str,
             "true_w": true_w
         }
         return sample
-
 
 def collate_fn(batch: List[Dict]) -> Dict:
     """
@@ -76,3 +110,7 @@ def collate_fn(batch: List[Dict]) -> Dict:
         "true_ws": true_ws,
         "label_strs": label_strs
     }
+
+
+
+

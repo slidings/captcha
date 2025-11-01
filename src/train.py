@@ -105,12 +105,17 @@ def main():
         root_dir=cfg["data"]["train_dir"],
         img_height=cfg["data"]["img_height"],
         max_width=cfg["data"]["max_width"],
-        grayscale=cfg["data"]["grayscale"]
+        grayscale=cfg["data"]["grayscale"],
+        is_train=True
     )
     n = len(ds)
     n_val = max(1, int(0.1 * n))
     n_train = n - n_val
     train_ds, val_ds = random_split(ds, [n_train, n_val], generator=torch.Generator().manual_seed(cfg["seed"]))
+
+    #Turn OFF augmentation for the validation set
+    # We access the underlying dataset object from the random_split subset
+    val_ds.dataset.is_train = False
 
     train_loader = DataLoader(train_ds, batch_size=cfg["train"]["batch_size"], shuffle=True,
                               num_workers=cfg["data"]["num_workers"], pin_memory=True, collate_fn=collate_fn)
@@ -132,17 +137,17 @@ def main():
     ).to(device)
 
     # Continue from the latest one
-    #ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
+    ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
 
     #Continue from the hand picked best one
     #ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
 
-    # if ckpt_path:
-    #     print(f"Loading latest checkpoint: {ckpt_path}")
-    #     ckpt = torch.load(ckpt_path, map_location=device)
-    #     model.load_state_dict(ckpt["model"])
-    # else:
-    #     print("No checkpoint found — training from scratch.")
+    if ckpt_path:
+        print(f"Loading latest checkpoint: {ckpt_path}")
+        ckpt = torch.load(ckpt_path, map_location=device)
+        model.load_state_dict(ckpt["model"])
+    else:
+        print("No checkpoint found — training from scratch.")
 
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=cfg["train"]["lr"], weight_decay=cfg["train"]["weight_decay"])
