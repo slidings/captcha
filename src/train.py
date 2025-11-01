@@ -117,10 +117,14 @@ def main():
     val_loader = DataLoader(val_ds, batch_size=cfg["train"]["batch_size"], shuffle=False,
                             num_workers=cfg["data"]["num_workers"], pin_memory=True, collate_fn=collate_fn)
 
+    is_grayscale = cfg["data"]["grayscale"]
+
     # --- Model
     num_classes = len(ITOCH)
     model = CRNN(
         num_classes=num_classes,
+        input_channels=1 if is_grayscale else 3,
+        img_height=cfg["data"]["img_height"],
         cnn_out=cfg["model"]["cnn_out_channels"],
         lstm_hidden=cfg["model"]["lstm_hidden"],
         lstm_layers=cfg["model"]["lstm_layers"],

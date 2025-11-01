@@ -18,7 +18,7 @@ train:
 model:
   cnn_out_channels: 256
   lstm_hidden: 256
-  lstm_layers: 1
+  lstm_layers: 2
   dropout: 0.3
 
 log:
