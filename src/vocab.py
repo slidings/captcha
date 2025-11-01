@@ -4,6 +4,7 @@ from typing import List
 # digits + lowercase (no uppercase)
 CHARS = "0123456789abcdefghijklmnopqrstuvwxyz"
 
+# Tag special blank character as index 0
 BLANK = 0
 ITOCH = ["<blank>"] + list(CHARS)
 CTOIX = {c: i+1 for i, c in enumerate(CHARS)}

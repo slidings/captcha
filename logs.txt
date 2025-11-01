@@ -1,0 +1,201 @@
+2025-11-01 04:02:36 - Using device: cpu
+2025-11-01 04:04:09 - Epoch 1 completed in 92.6s
+2025-11-01 04:04:25 - Validation done in 16.2s — CER=1.000, Exact=0.000 (N=801)
+2025-11-01 04:04:25 - Epoch 1: CER=1.000, Exact=0.000 (N=801)
+2025-11-01 04:04:25 - Saved checkpoint: checkpoints_colour\epoch01.pt
+
+2025-11-01 04:05:55 - Epoch 2 completed in 89.4s
+2025-11-01 04:06:11 - Validation done in 16.4s — CER=1.000, Exact=0.000 (N=801)
+2025-11-01 04:06:11 - Epoch 2: CER=1.000, Exact=0.000 (N=801)
+2025-11-01 04:06:11 - Saved checkpoint: checkpoints_colour\epoch02.pt
+
+2025-11-01 04:07:42 - Epoch 3 completed in 91.1s
+2025-11-01 04:08:05 - Validation done in 22.3s — CER=1.000, Exact=0.000 (N=801)
+2025-11-01 04:08:05 - Epoch 3: CER=1.000, Exact=0.000 (N=801)
+2025-11-01 04:08:05 - Saved checkpoint: checkpoints_colour\epoch03.pt
+
+2025-11-01 04:09:38 - Epoch 4 completed in 92.9s
+2025-11-01 04:09:58 - Validation done in 20.2s — CER=0.995, Exact=0.000 (N=801)
+2025-11-01 04:09:58 - Epoch 4: CER=0.995, Exact=0.000 (N=801)
+2025-11-01 04:09:58 - Saved checkpoint: checkpoints_colour\epoch04.pt
+
+2025-11-01 04:11:37 - Epoch 5 completed in 98.9s
+2025-11-01 04:11:53 - Validation done in 16.5s — CER=0.999, Exact=0.000 (N=801)
+2025-11-01 04:11:53 - Epoch 5: CER=0.999, Exact=0.000 (N=801)
+2025-11-01 04:11:53 - Saved checkpoint: checkpoints_colour\epoch05.pt
+
+2025-11-01 04:13:35 - Epoch 6 completed in 102.1s
+2025-11-01 04:13:54 - Validation done in 19.1s — CER=0.994, Exact=0.000 (N=801)
+2025-11-01 04:13:54 - Epoch 6: CER=0.994, Exact=0.000 (N=801)
+2025-11-01 04:13:54 - Saved checkpoint: checkpoints_colour\epoch06.pt
+
+2025-11-01 04:15:35 - Epoch 7 completed in 100.5s
+2025-11-01 04:15:51 - Validation done in 16.2s — CER=0.973, Exact=0.000 (N=801)
+2025-11-01 04:15:51 - Epoch 7: CER=0.973, Exact=0.000 (N=801)
+2025-11-01 04:15:51 - Saved checkpoint: checkpoints_colour\epoch07.pt
+
+2025-11-01 04:17:21 - Epoch 8 completed in 90.1s
+2025-11-01 04:17:37 - Validation done in 16.2s — CER=0.970, Exact=0.000 (N=801)
+2025-11-01 04:17:37 - Epoch 8: CER=0.970, Exact=0.000 (N=801)
+2025-11-01 04:17:37 - Saved checkpoint: checkpoints_colour\epoch08.pt
+
+2025-11-01 04:19:08 - Epoch 9 completed in 90.1s
+2025-11-01 04:19:24 - Validation done in 16.3s — CER=0.962, Exact=0.000 (N=801)
+2025-11-01 04:19:24 - Epoch 9: CER=0.962, Exact=0.000 (N=801)
+2025-11-01 04:19:24 - Saved checkpoint: checkpoints_colour\epoch09.pt
+
+2025-11-01 04:20:54 - Epoch 10 completed in 90.6s
+2025-11-01 04:21:11 - Validation done in 16.6s — CER=0.952, Exact=0.000 (N=801)
+2025-11-01 04:21:11 - Epoch 10: CER=0.952, Exact=0.000 (N=801)
+2025-11-01 04:21:11 - Saved checkpoint: checkpoints_colour\epoch10.pt
+
+2025-11-01 04:22:42 - Epoch 11 completed in 91.2s
+2025-11-01 04:22:59 - Validation done in 16.5s — CER=0.951, Exact=0.000 (N=801)
+2025-11-01 04:22:59 - Epoch 11: CER=0.951, Exact=0.000 (N=801)
+2025-11-01 04:22:59 - Saved checkpoint: checkpoints_colour\epoch11.pt
+
+2025-11-01 04:24:30 - Epoch 12 completed in 91.0s
+2025-11-01 04:24:46 - Validation done in 16.4s — CER=0.943, Exact=0.000 (N=801)
+2025-11-01 04:24:46 - Epoch 12: CER=0.943, Exact=0.000 (N=801)
+2025-11-01 04:24:46 - Saved checkpoint: checkpoints_colour\epoch12.pt
+
+2025-11-01 04:26:17 - Epoch 13 completed in 90.7s
+2025-11-01 04:26:33 - Validation done in 16.2s — CER=0.942, Exact=0.000 (N=801)
+2025-11-01 04:26:33 - Epoch 13: CER=0.942, Exact=0.000 (N=801)
+2025-11-01 04:26:33 - Saved checkpoint: checkpoints_colour\epoch13.pt
+
+2025-11-01 04:28:04 - Epoch 14 completed in 90.5s
+2025-11-01 04:28:20 - Validation done in 16.4s — CER=0.941, Exact=0.000 (N=801)
+2025-11-01 04:28:20 - Epoch 14: CER=0.941, Exact=0.000 (N=801)
+2025-11-01 04:28:20 - Saved checkpoint: checkpoints_colour\epoch14.pt
+
+2025-11-01 04:29:50 - Epoch 15 completed in 90.3s
+2025-11-01 04:30:07 - Validation done in 16.3s — CER=0.934, Exact=0.000 (N=801)
+2025-11-01 04:30:07 - Epoch 15: CER=0.934, Exact=0.000 (N=801)
+2025-11-01 04:30:07 - Saved checkpoint: checkpoints_colour\epoch15.pt
+
+2025-11-01 04:31:37 - Epoch 16 completed in 90.2s
+2025-11-01 04:31:53 - Validation done in 16.4s — CER=0.927, Exact=0.000 (N=801)
+2025-11-01 04:31:53 - Epoch 16: CER=0.927, Exact=0.000 (N=801)
+2025-11-01 04:31:53 - Saved checkpoint: checkpoints_colour\epoch16.pt
+
+2025-11-01 04:33:24 - Epoch 17 completed in 90.7s
+2025-11-01 04:33:40 - Validation done in 16.4s — CER=0.931, Exact=0.000 (N=801)
+2025-11-01 04:33:40 - Epoch 17: CER=0.931, Exact=0.000 (N=801)
+2025-11-01 04:33:40 - Saved checkpoint: checkpoints_colour\epoch17.pt
+
+2025-11-01 04:35:11 - Epoch 18 completed in 90.1s
+2025-11-01 04:35:27 - Validation done in 16.4s — CER=0.920, Exact=0.000 (N=801)
+2025-11-01 04:35:27 - Epoch 18: CER=0.920, Exact=0.000 (N=801)
+2025-11-01 04:35:27 - Saved checkpoint: checkpoints_colour\epoch18.pt
+
+2025-11-01 04:36:58 - Epoch 19 completed in 90.6s
+2025-11-01 04:37:14 - Validation done in 16.5s — CER=0.911, Exact=0.000 (N=801)
+2025-11-01 04:37:14 - Epoch 19: CER=0.911, Exact=0.000 (N=801)
+2025-11-01 04:37:14 - Saved checkpoint: checkpoints_colour\epoch19.pt
+
+2025-11-01 04:38:45 - Epoch 20 completed in 90.6s
+2025-11-01 04:39:01 - Validation done in 16.3s — CER=0.913, Exact=0.000 (N=801)
+2025-11-01 04:39:01 - Epoch 20: CER=0.913, Exact=0.000 (N=801)
+2025-11-01 04:39:01 - Saved checkpoint: checkpoints_colour\epoch20.pt
+
+2025-11-01 04:40:31 - Epoch 21 completed in 90.6s
+2025-11-01 04:40:48 - Validation done in 16.3s — CER=0.903, Exact=0.000 (N=801)
+2025-11-01 04:40:48 - Epoch 21: CER=0.903, Exact=0.000 (N=801)
+2025-11-01 04:40:48 - Saved checkpoint: checkpoints_colour\epoch21.pt
+
+2025-11-01 04:42:18 - Epoch 22 completed in 90.7s
+2025-11-01 04:42:35 - Validation done in 16.2s — CER=0.898, Exact=0.000 (N=801)
+2025-11-01 04:42:35 - Epoch 22: CER=0.898, Exact=0.000 (N=801)
+2025-11-01 04:42:35 - Saved checkpoint: checkpoints_colour\epoch22.pt
+
+2025-11-01 04:44:05 - Epoch 23 completed in 90.8s
+2025-11-01 04:44:22 - Validation done in 16.4s — CER=0.895, Exact=0.000 (N=801)
+2025-11-01 04:44:22 - Epoch 23: CER=0.895, Exact=0.000 (N=801)
+2025-11-01 04:44:22 - Saved checkpoint: checkpoints_colour\epoch23.pt
+
+2025-11-01 04:45:53 - Epoch 24 completed in 90.7s
+2025-11-01 04:46:09 - Validation done in 16.6s — CER=0.886, Exact=0.000 (N=801)
+2025-11-01 04:46:09 - Epoch 24: CER=0.886, Exact=0.000 (N=801)
+2025-11-01 04:46:09 - Saved checkpoint: checkpoints_colour\epoch24.pt
+
+2025-11-01 04:47:40 - Epoch 25 completed in 90.7s
+2025-11-01 04:47:56 - Validation done in 16.3s — CER=0.885, Exact=0.000 (N=801)
+2025-11-01 04:47:56 - Epoch 25: CER=0.885, Exact=0.000 (N=801)
+2025-11-01 04:47:56 - Saved checkpoint: checkpoints_colour\epoch25.pt
+
+2025-11-01 04:49:27 - Epoch 26 completed in 90.8s
+2025-11-01 04:49:43 - Validation done in 16.3s — CER=0.871, Exact=0.000 (N=801)
+2025-11-01 04:49:43 - Epoch 26: CER=0.871, Exact=0.000 (N=801)
+2025-11-01 04:49:43 - Saved checkpoint: checkpoints_colour\epoch26.pt
+
+2025-11-01 04:51:14 - Epoch 27 completed in 90.8s
+2025-11-01 04:51:30 - Validation done in 16.5s — CER=0.853, Exact=0.000 (N=801)
+2025-11-01 04:51:30 - Epoch 27: CER=0.853, Exact=0.000 (N=801)
+2025-11-01 04:51:30 - Saved checkpoint: checkpoints_colour\epoch27.pt
+
+2025-11-01 04:53:01 - Epoch 28 completed in 91.0s
+2025-11-01 04:53:18 - Validation done in 16.4s — CER=0.843, Exact=0.000 (N=801)
+2025-11-01 04:53:18 - Epoch 28: CER=0.843, Exact=0.000 (N=801)
+2025-11-01 04:53:18 - Saved checkpoint: checkpoints_colour\epoch28.pt
+
+2025-11-01 04:54:49 - Epoch 29 completed in 90.8s
+2025-11-01 04:55:05 - Validation done in 16.2s — CER=0.845, Exact=0.000 (N=801)
+2025-11-01 04:55:05 - Epoch 29: CER=0.845, Exact=0.000 (N=801)
+2025-11-01 04:55:05 - Saved checkpoint: checkpoints_colour\epoch29.pt
+
+2025-11-01 04:56:36 - Epoch 30 completed in 90.8s
+2025-11-01 04:56:52 - Validation done in 16.2s — CER=0.830, Exact=0.000 (N=801)
+2025-11-01 04:56:52 - Epoch 30: CER=0.830, Exact=0.000 (N=801)
+2025-11-01 04:56:52 - Saved checkpoint: checkpoints_colour\epoch30.pt
+
+2025-11-01 04:58:23 - Epoch 31 completed in 90.7s
+2025-11-01 04:58:39 - Validation done in 16.4s — CER=0.811, Exact=0.000 (N=801)
+2025-11-01 04:58:39 - Epoch 31: CER=0.811, Exact=0.000 (N=801)
+2025-11-01 04:58:39 - Saved checkpoint: checkpoints_colour\epoch31.pt
+
+2025-11-01 05:00:09 - Epoch 32 completed in 90.5s
+2025-11-01 05:00:26 - Validation done in 16.3s — CER=0.797, Exact=0.000 (N=801)
+2025-11-01 05:00:26 - Epoch 32: CER=0.797, Exact=0.000 (N=801)
+2025-11-01 05:00:26 - Saved checkpoint: checkpoints_colour\epoch32.pt
+
+2025-11-01 05:01:57 - Epoch 33 completed in 91.1s
+2025-11-01 05:02:13 - Validation done in 16.5s — CER=0.778, Exact=0.000 (N=801)
+2025-11-01 05:02:13 - Epoch 33: CER=0.778, Exact=0.000 (N=801)
+2025-11-01 05:02:14 - Saved checkpoint: checkpoints_colour\epoch33.pt
+
+2025-11-01 05:03:45 - Epoch 34 completed in 91.0s
+2025-11-01 05:04:01 - Validation done in 16.4s — CER=0.769, Exact=0.000 (N=801)
+2025-11-01 05:04:01 - Epoch 34: CER=0.769, Exact=0.000 (N=801)
+2025-11-01 05:04:01 - Saved checkpoint: checkpoints_colour\epoch34.pt
+
+2025-11-01 05:05:32 - Epoch 35 completed in 90.9s
+2025-11-01 05:05:48 - Validation done in 16.3s — CER=0.748, Exact=0.000 (N=801)
+2025-11-01 05:05:48 - Epoch 35: CER=0.748, Exact=0.000 (N=801)
+2025-11-01 05:05:48 - Saved checkpoint: checkpoints_colour\epoch35.pt
+
+2025-11-01 05:07:19 - Epoch 36 completed in 90.8s
+2025-11-01 05:07:35 - Validation done in 16.2s — CER=0.729, Exact=0.000 (N=801)
+2025-11-01 05:07:35 - Epoch 36: CER=0.729, Exact=0.000 (N=801)
+2025-11-01 05:07:35 - Saved checkpoint: checkpoints_colour\epoch36.pt
+
+2025-11-01 05:09:06 - Epoch 37 completed in 90.9s
+2025-11-01 05:09:22 - Validation done in 16.3s — CER=0.730, Exact=0.001 (N=801)
+2025-11-01 05:09:22 - Epoch 37: CER=0.730, Exact=0.001 (N=801)
+2025-11-01 05:09:22 - Saved checkpoint: checkpoints_colour\epoch37.pt
+
+2025-11-01 05:10:53 - Epoch 38 completed in 90.7s
+2025-11-01 05:11:09 - Validation done in 16.3s — CER=0.720, Exact=0.001 (N=801)
+2025-11-01 05:11:09 - Epoch 38: CER=0.720, Exact=0.001 (N=801)
+2025-11-01 05:11:09 - Saved checkpoint: checkpoints_colour\epoch38.pt
+
+2025-11-01 05:12:40 - Epoch 39 completed in 91.0s
+2025-11-01 05:12:57 - Validation done in 16.4s — CER=0.712, Exact=0.001 (N=801)
+2025-11-01 05:12:57 - Epoch 39: CER=0.712, Exact=0.001 (N=801)
+2025-11-01 05:12:57 - Saved checkpoint: checkpoints_colour\epoch39.pt
+
+2025-11-01 05:14:28 - Epoch 40 completed in 90.9s
+2025-11-01 05:14:44 - Validation done in 16.3s — CER=0.692, Exact=0.010 (N=801)
+2025-11-01 05:14:44 - Epoch 40: CER=0.692, Exact=0.010 (N=801)
+2025-11-01 05:14:44 - Saved checkpoint: checkpoints_colour\epoch40.pt
+
