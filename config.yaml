@@ -1,8 +1,9 @@
 seed: 42
 data:
   train_dir: "data/train"
+  # Note that the image height and width must be proportionate to most of training data
   img_height: 32
-  max_width: 256
+  max_width: 192 #192 seems to be good middle ground
   grayscale: false
   num_workers: 8
 
@@ -15,9 +16,9 @@ train:
   lr_decay: 0.95
 
 model:
-  cnn_out_channels: 128
-  lstm_hidden: 128
-  lstm_layers: 1
+  cnn_out_channels: 64
+  lstm_hidden: 64
+  lstm_layers: 2
   dropout: 0.3
 
 log:
