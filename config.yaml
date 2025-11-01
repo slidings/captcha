@@ -16,8 +16,8 @@ train:
   lr_decay: 0.95
 
 model:
-  cnn_out_channels: 128
-  lstm_hidden: 128
+  cnn_out_channels: 256
+  lstm_hidden: 256
   lstm_layers: 1
   dropout: 0.3
 

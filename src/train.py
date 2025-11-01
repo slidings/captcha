@@ -128,17 +128,17 @@ def main():
     ).to(device)
 
     # Continue from the latest one
-    ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
+    #ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
 
     #Continue from the hand picked best one
     #ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
 
-    if ckpt_path:
-        print(f"Loading latest checkpoint: {ckpt_path}")
-        ckpt = torch.load(ckpt_path, map_location=device)
-        model.load_state_dict(ckpt["model"])
-    else:
-        print("No checkpoint found — training from scratch.")
+    # if ckpt_path:
+    #     print(f"Loading latest checkpoint: {ckpt_path}")
+    #     ckpt = torch.load(ckpt_path, map_location=device)
+    #     model.load_state_dict(ckpt["model"])
+    # else:
+    #     print("No checkpoint found — training from scratch.")
 
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=cfg["train"]["lr"], weight_decay=cfg["train"]["weight_decay"])
