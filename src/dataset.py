@@ -24,20 +24,17 @@ class CaptchaDataset(Dataset):
         
         # Define the augmentation pipeline
         if self.is_train:
-            # We must use ToPILImage and ToTensor for torchvision transforms
             self.aug_transform = transforms.Compose([
                 transforms.ToPILImage(),
-                # Add color jitter since we know color is important
-                transforms.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.3, hue=0.1),
-                
-                # Add affine transforms: rotation, shear, and translation
-                transforms.RandomAffine(degrees=5, translate=(0.1, 0.1), shear=10),
-                
-                # Add blur as a form of noise
-                transforms.GaussianBlur(kernel_size=(3, 3), sigma=(0.1, 1.0)),
-                
-                # Convert back to a tensor-like numpy array (will be done in to_float_tensor)
-                # transforms.ToTensor() # We will do our own tensor conversion
+                transforms.RandomApply([
+                    transforms.ColorJitter(0.2, 0.2, 0.2, 0.05)
+                ], p=0.7),
+                transforms.RandomApply([
+                    transforms.RandomAffine(degrees=3, translate=(0.05, 0.05), shear=5)
+                ], p=0.7),
+                transforms.RandomApply([
+                    transforms.GaussianBlur((3, 3), sigma=(0.1, 0.5))
+                ], p=0.5),
             ])
         else:
             self.aug_transform = None

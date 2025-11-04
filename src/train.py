@@ -100,22 +100,38 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device:", device)
 
-    # --- Data
-    ds = CaptchaDataset(
+    # --- Create separate datasets for train/val ---
+    full_ds = CaptchaDataset(
         root_dir=cfg["data"]["train_dir"],
         img_height=cfg["data"]["img_height"],
         max_width=cfg["data"]["max_width"],
         grayscale=cfg["data"]["grayscale"],
         is_train=True
     )
-    n = len(ds)
+
+    n = len(full_ds)
     n_val = max(1, int(0.1 * n))
     n_train = n - n_val
-    train_ds, val_ds = random_split(ds, [n_train, n_val], generator=torch.Generator().manual_seed(cfg["seed"]))
 
-    #Turn OFF augmentation for the validation set
-    # We access the underlying dataset object from the random_split subset
-    val_ds.dataset.is_train = False
+    # Split indices manually
+    train_indices, val_indices = torch.utils.data.random_split(
+        range(n),
+        [n_train, n_val],
+        generator=torch.Generator().manual_seed(cfg["seed"])
+    )
+
+    # Build two *independent* dataset instances
+    train_ds = torch.utils.data.Subset(full_ds, train_indices)
+    val_ds = torch.utils.data.Subset(
+        CaptchaDataset(
+            root_dir=cfg["data"]["train_dir"],
+            img_height=cfg["data"]["img_height"],
+            max_width=cfg["data"]["max_width"],
+            grayscale=cfg["data"]["grayscale"],
+            is_train=False   # crucial: no augmentation
+        ),
+        val_indices
+    )
 
     train_loader = DataLoader(train_ds, batch_size=cfg["train"]["batch_size"], shuffle=True,
                               num_workers=cfg["data"]["num_workers"], pin_memory=True, collate_fn=collate_fn)
@@ -136,12 +152,14 @@ def main():
         dropout=cfg["model"]["dropout"]
     ).to(device)
 
+    ckpt_path = False
+
     # Continue from the latest one
-    ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
+    #ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
 
     #Continue from the hand picked best one
-    #ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
-
+    ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
+    
     if ckpt_path:
         print(f"Loading latest checkpoint: {ckpt_path}")
         ckpt = torch.load(ckpt_path, map_location=device)
@@ -184,9 +202,32 @@ def main():
             targets = batch["targets"].to(device)
             target_lengths = batch["target_lengths"].to(device)
 
-            logits, input_lengths = model(images)
-            loss = ctc_loss(logits.log_softmax(dim=-1), targets, input_lengths, target_lengths)
+            logits, _ = model(images)
 
+            # logits shape: [Time, Batch, Classes]
+            T = logits.size(0)  # Time steps (sequence length)
+            B = logits.size(1)  # Batch size
+            
+            # All sequences have the same length T (due to padding)
+            input_lengths = torch.full(
+                size=(B,), 
+                fill_value=T, 
+                dtype=torch.long, 
+                device=images.device
+            )
+            
+            # Safety check: target_lengths should not exceed input_lengths
+            valid_mask = target_lengths <= input_lengths
+            if not valid_mask.all():
+                print(f"Skipping batch: target_lengths > input_lengths")
+                continue
+            
+            loss = ctc_loss(
+                logits.log_softmax(dim=-1), 
+                targets, 
+                input_lengths, 
+                target_lengths
+            )
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), cfg["train"]["grad_clip"])
