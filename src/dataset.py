@@ -6,6 +6,8 @@ import torch
 import numpy as np
 from torch.utils.data import Dataset
 from typing import List, Tuple, Dict
+
+from .image_clip import resize_with_padding
 from .utils import parse_label_from_name
 from .vocab import encode_label
 from .transforms import keep_aspect_resize_pad, to_float_tensor, basic_preprocess
@@ -56,6 +58,9 @@ class CaptchaDataset(Dataset):
 
         # resize + pad (from transforms.py)
         img_resized, true_w = keep_aspect_resize_pad(img, self.h, self.max_w)
+
+        # for the new resizing
+        # img_resized, (_,_,true_w,_) = resize_with_padding(img, self.h, self.max_w)
         
         # --- APPLY AUGMENTATION ---
         # We must convert to PIL Image for torchvision transforms, then back
