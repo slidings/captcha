@@ -57,10 +57,10 @@ class CaptchaDataset(Dataset):
             img = basic_preprocess(img)
 
         # resize + pad (from transforms.py)
-        img_resized, true_w = keep_aspect_resize_pad(img, self.h, self.max_w)
+        # img_resized, true_w = keep_aspect_resize_pad(img, self.h, self.max_w)
 
         # for the new resizing
-        # img_resized, (_,_,true_w,_) = resize_with_padding(img, self.h, self.max_w)
+        img_resized, (_,_,true_w,_) = resize_with_padding(img, self.h, self.max_w)
         
         # --- APPLY AUGMENTATION ---
         # We must convert to PIL Image for torchvision transforms, then back
