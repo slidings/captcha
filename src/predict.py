@@ -86,7 +86,7 @@ def main():
     print("Using device:", device)
 
     # ---- Dataset (test) ----
-    test_dir = os.path.join(cfg["data"]["train_dir"].replace("train", "test"))
+    test_dir = "data/test"  # fixed path for evaluation
     ds = CaptchaDataset(
         root_dir=test_dir,
         img_height=cfg["data"]["img_height"],

@@ -1,7 +1,7 @@
 # visualise_aug.py
 # Run with python -m src.visualise_aug
 
-# This script visualises the effect of data augmentation on sample images
+# This script visualises the effect of data augmentation + padding on sample images
 
 import os
 import random

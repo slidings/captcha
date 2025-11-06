@@ -9,7 +9,8 @@ class ConvBlock(nn.Module):
         super().__init__()
         self.net = nn.Sequential(
             nn.Conv2d(cin, cout, k, s, p, bias=False),
-            nn.InstanceNorm2d(cout, affine=True),
+            #nn.InstanceNorm2d(cout, affine=True),
+            nn.BatchNorm2d(cout),
             nn.ReLU(inplace=True)
         )
     def forward(self, x): return self.net(x)
@@ -39,7 +40,13 @@ class CRNN(nn.Module):
                                num_layers=lstm_layers, bidirectional=True, 
                                batch_first=True, dropout=dropout)
                                
-        self.classifier = nn.Linear(2*lstm_hidden, num_classes)
+        #self.classifier = nn.Linear(2*lstm_hidden, num_classes)
+
+        #regularisation if necessary
+        self.classifier = nn.Sequential(
+            nn.Dropout(0.2),
+            nn.Linear(2*lstm_hidden, num_classes)
+        )
 
     def forward(self, images: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         feat = self.cnn(images)
