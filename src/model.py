@@ -4,6 +4,35 @@ import torch.nn as nn
 from typing import Tuple
 from .vocab import BLANK, ITOCH
 
+
+class ResidualBlock(nn.Module):
+    """Standard ResNet-style residual block (no downsampling)."""
+    def __init__(self, ch):
+        super().__init__()
+        self.conv1 = nn.Conv2d(ch, ch, kernel_size=3, padding=1, bias=False)
+        self.bn1 = nn.BatchNorm2d(ch)
+        self.relu = nn.ReLU(inplace=True)
+        self.conv2 = nn.Conv2d(ch, ch, kernel_size=3, padding=1, bias=False)
+        self.bn2 = nn.BatchNorm2d(ch)
+
+        # Initialize the second BN's gamma to 0 (identity start)
+        nn.init.constant_(self.bn2.weight, 0)
+        nn.init.constant_(self.bn2.bias, 0)
+
+    def forward(self, x):
+        identity = x
+
+        out = self.conv1(x)
+        out = self.bn1(out)
+        out = self.relu(out)
+
+        out = self.conv2(out)
+        out = self.bn2(out)
+
+        out += identity
+        out = self.relu(out)  # standard ResNet post-add ReLU
+        return out
+    
 class ConvBlock(nn.Module):
     def __init__(self, cin, cout, k=3, s=1, p=1):
         super().__init__()
@@ -14,6 +43,7 @@ class ConvBlock(nn.Module):
             nn.ReLU(inplace=True)
         )
     def forward(self, x): return self.net(x)
+
 class CRNN(nn.Module):
     def __init__(self, 
                  num_classes: int,
@@ -29,6 +59,7 @@ class CRNN(nn.Module):
         self.cnn = nn.Sequential(
             ConvBlock(input_channels, 64), nn.MaxPool2d(2, 2),  # H/2
             ConvBlock(64, 128),            nn.MaxPool2d(2, 2),  # H/4
+            ResidualBlock(128),
             ConvBlock(128, cnn_out),
         )
         

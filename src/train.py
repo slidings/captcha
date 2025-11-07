@@ -202,15 +202,11 @@ def main():
             targets = batch["targets"].to(device)
             target_lengths = batch["target_lengths"].to(device)
 
-            logits, _ = model(images)
+            logits, input_lengths = model(images)
 
             # logits shape: [Time, Batch, Classes]
             T = logits.size(0)  # Time steps (sequence length)
             B = logits.size(1)  # Batch size
-            
-            # --- FIX: use true_ws to compute input_lengths ---
-            true_ws = batch["true_ws"].to(device)
-            input_lengths = (true_ws // 4).clamp(min=1)
             
             # Safety check: target_lengths should not exceed input_lengths
             valid_mask = target_lengths <= input_lengths
