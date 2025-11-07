@@ -158,7 +158,7 @@ def main():
     #ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
 
     #Continue from the hand picked best one
-    ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
+    #ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
     
     if ckpt_path:
         print(f"Loading latest checkpoint: {ckpt_path}")
@@ -208,13 +208,9 @@ def main():
             T = logits.size(0)  # Time steps (sequence length)
             B = logits.size(1)  # Batch size
             
-            # All sequences have the same length T (due to padding)
-            input_lengths = torch.full(
-                size=(B,), 
-                fill_value=T, 
-                dtype=torch.long, 
-                device=images.device
-            )
+            # --- FIX: use true_ws to compute input_lengths ---
+            true_ws = batch["true_ws"].to(device)
+            input_lengths = (true_ws // 4).clamp(min=1)
             
             # Safety check: target_lengths should not exceed input_lengths
             valid_mask = target_lengths <= input_lengths
@@ -255,7 +251,18 @@ def main():
         ckpt_path = os.path.join(cfg["log"]["ckpt_dir"], f"epoch{epoch:02d}.pt")
         torch.save({"model": model.state_dict(), "cfg": cfg}, ckpt_path)
         print(f"Saved checkpoint: {ckpt_path}\n")
-
+        
+        # --- LOG TO FILE ---
+        log_file = os.path.join(cfg["log"]["ckpt_dir"], "logs.txt")
+        with open(log_file, "a") as f:
+            f.write(
+                f"Epoch {epoch:02d} | "
+                f"Loss(avg): {running / max(1, i):.4f} | "
+                f"CER: {cer:.4f} | "
+                f"Exact: {exact:.4f} | "
+                f"ValSamples: {count} | "
+                f"Time: {elapsed_epoch:.1f}s\n"
+            )
 
 if __name__ == "__main__":
     main()

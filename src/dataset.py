@@ -29,13 +29,13 @@ class CaptchaDataset(Dataset):
             self.aug_transform = transforms.Compose([
                 transforms.ToPILImage(),
                 transforms.RandomApply([
-                    transforms.ColorJitter(0.2, 0.2, 0.2, 0.05)
-                ], p=0.7),
+                    transforms.ColorJitter(0.1, 0.1, 0.1, 0.05)
+                ], p=0.5),
                 transforms.RandomApply([
-                    transforms.RandomAffine(degrees=3, translate=(0.05, 0.05), shear=5)
-                ], p=0.7),
+                    transforms.RandomAffine(degrees=2, translate=(0.02, 0.02), shear=3)
+                ], p=0.5),
                 transforms.RandomApply([
-                    transforms.GaussianBlur((3, 3), sigma=(0.1, 0.5))
+                    transforms.GaussianBlur((3, 3), sigma=(0.05, 0.2))
                 ], p=0.5),
             ])
         else:
@@ -57,10 +57,10 @@ class CaptchaDataset(Dataset):
             img = basic_preprocess(img)
 
         # resize + pad (from transforms.py)
-        img_resized, true_w = keep_aspect_resize_pad(img, self.h, self.max_w)
+        # img_resized, true_w = keep_aspect_resize_pad(img, self.h, self.max_w)
 
         # for the new resizing
-        # img_resized, (_,_,true_w,_) = resize_with_padding(img, self.h, self.max_w)
+        img_resized, (_,_,true_w,_) = resize_with_padding(img, self.h, self.max_w)
         
         # --- APPLY AUGMENTATION ---
         # We must convert to PIL Image for torchvision transforms, then back
