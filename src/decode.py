@@ -1,6 +1,5 @@
 # src/decode.py
 import torch
-#from torchaudio.models.decoder import ctc_decoder
 from .vocab import decode_greedy, ITOCH, BLANK
 
 # Converts a 3d matrix into 1d where each image in batch 
@@ -16,7 +15,10 @@ def greedy_decode(logits: torch.Tensor) -> str:
     return [decode_greedy(seq) for seq in best]
 
 
+# --- beam search decode using torchaudio's CTC decoder ---
+# Tried beamsize 2,5,10 but results were worse than greedy.
 
+# from torchaudio.models.decoder import ctc_decoder
 '''
 
 # --- fast beam search using torchaudio's built-in C++ backend ---

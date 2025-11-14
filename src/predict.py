@@ -33,7 +33,6 @@ def levenshtein(a: str, b: str) -> int:
 
 
 # Random from test set
-
 def evaluate(model, loader, device, show_samples=10):
     model.eval()
     total_chars, total_edits, total_exact = 0, 0, 0

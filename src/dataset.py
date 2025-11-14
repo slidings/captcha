@@ -24,7 +24,7 @@ class CaptchaDataset(Dataset):
         
         self.is_train = is_train
         
-        # Define the augmentation pipeline
+        # Add augmentation to training data
         if self.is_train:
             self.aug_transform = transforms.Compose([
                 transforms.ToPILImage(),
@@ -56,20 +56,13 @@ class CaptchaDataset(Dataset):
         if self.grayscale:
             img = basic_preprocess(img)
 
-        # resize + pad (from transforms.py)
-        # img_resized, true_w = keep_aspect_resize_pad(img, self.h, self.max_w)
-
-        # for the new resizing
         img_resized, (_,_,true_w,_) = resize_with_padding(img, self.h, self.max_w)
         
-        # --- APPLY AUGMENTATION ---
-        # We must convert to PIL Image for torchvision transforms, then back
         if self.aug_transform:
             # Apply the transform pipeline
             img_aug_pil = self.aug_transform(img_resized)
             # Convert PIL image back to OpenCV (numpy) format
-            img_resized = np.array(img_aug_pil) 
-        # --- END AUGMENTATION ---
+            img_resized = np.array(img_aug_pil)
 
         # Convert to float tensor (CHW, normalized)
         tensor = to_float_tensor(img_resized)
@@ -93,15 +86,12 @@ def collate_fn(batch: List[Dict]) -> Dict:
     labels = [b["label_ids"] for b in batch]
     label_lengths = torch.tensor([len(x) for x in labels], dtype=torch.long)
 
+    # Edge case handling for empty labels, for future use if needed
     if any(l == 0 for l in label_lengths.tolist()):
-        # edge case: empty labels after filtering — drop them or set to a dummy char
-        # For now, drop empty by replacing with a zero-length tensor (CTC allows 0-length?)
-        # It's cleaner to filter those samples in __getitem__ if needed.
         pass
 
     targets = torch.cat(labels, dim=0) if len(labels) else torch.empty(0, dtype=torch.long)
 
-    # true_w helps estimate sequence lengths later
     true_ws = torch.tensor([b["true_w"] for b in batch], dtype=torch.long)
     label_strs = [b["label_str"] for b in batch]
 

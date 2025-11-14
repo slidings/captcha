@@ -157,7 +157,7 @@ def main():
     # Continue from the latest one
     #ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
 
-    #Continue from the hand picked best one
+    # Continue from the hand picked best one
     #ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])
     
     if ckpt_path:
@@ -169,14 +169,11 @@ def main():
 
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=cfg["train"]["lr"], weight_decay=cfg["train"]["weight_decay"])
-    
-    # Scheduler based on time
-    #scheduler = ExponentialLR(optimizer, gamma=cfg["train"].get("lr_decay", 1.0))
 
     # Scheduler based on training
     scheduler = ReduceLROnPlateau(
         optimizer,
-        mode="min",      # because lower CER is better
+        mode="min",      # lower CER is better
         factor=0.5,      # reduce LR by half when plateauing
         patience=2,      # wait 2 epochs before reducing
     )
