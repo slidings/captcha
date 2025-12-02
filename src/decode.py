@@ -1,25 +1,48 @@
 # src/decode.py
 import torch
-from .vocab import decode_greedy, ITOCH, BLANK
+from .vocab import ITOCH, BLANK
 
 # Converts a 3d matrix into 1d where each image in batch 
 # returns the prediction string
-def greedy_decode(logits: torch.Tensor) -> str:
+def greedy_decode(logits: torch.Tensor):
     """
-    logits: (Time,Batch,Classes) raw scores
-    returns list[str] length B
+    Fast GPU version: logits (T, B, C)
+    Returns list[str] of length B
     """
-    probs = logits.softmax(dim=-1)           # (T,B,C)
-    best = probs.argmax(dim=-1)              # (T,B)
-    best = best.permute(1,0).cpu().tolist()  # (B,T) as python lists
-    return [decode_greedy(seq) for seq in best]
+    # argmax directly (T, B)
+    best = logits.argmax(dim=-1)   # no softmax needed
+
+    # collapse repeats and remove blanks in a vectorized torch way
+    # best: (T, B) → (B, T)
+    best = best.transpose(0, 1)
+
+    # build mask for "keep" positions: x != blank AND x != previous
+    prev = torch.cat([torch.full((best.size(0), 1), -1, device=best.device), best[:, :-1]], dim=1)
+    keep = (best != BLANK) & (best != prev)
+
+    # convert to python strings
+    preds = []
+    for b in range(best.size(0)):
+        indices = best[b][keep[b]].tolist()
+        preds.append("".join(ITOCH[i] for i in indices))
+
+    return preds
+
+
+
+
+
+
+
+
+
 
 
 # --- beam search decode using torchaudio's CTC decoder ---
 # Tried beamsize 2,5,10 but results were worse than greedy.
 
-# from torchaudio.models.decoder import ctc_decoder
 '''
+from torchaudio.models.decoder import ctc_decoder
 
 # --- fast beam search using torchaudio's built-in C++ backend ---
 _beam_decoder = ctc_decoder(

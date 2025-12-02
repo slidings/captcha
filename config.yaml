@@ -8,7 +8,7 @@ data:
   num_workers: 8
 
 train:
-  batch_size: 32
+  batch_size: 64
   epochs: 60
   lr: 1e-3
   weight_decay: 1e-4

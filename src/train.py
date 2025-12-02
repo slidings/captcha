@@ -155,7 +155,7 @@ def main():
     ckpt_path = False
 
     # Continue from the latest one
-    #ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
+    ckpt_path = find_latest_checkpoint(cfg["log"]["ckpt_dir"])
 
     # Continue from the hand picked best one
     #ckpt_path = find_best_checkpoint(cfg["log"]["ckpt_dir"])

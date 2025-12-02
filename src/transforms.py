@@ -1,87 +1,83 @@
-
 import cv2
 import numpy as np
 import glob
 import os
 
 
-
 def keep_aspect_resize_pad(img, target_h=32, max_w=128):
     """
-    Trims whitespace, then resizes to fit *within* (target_h, max_w)
-    while maintaining aspect ratio, and finally pads to (target_h, max_w).
+    Improved version:
+    - Removes black noise lines
+    - Boosts contrast for pale coloured characters using LAB + CLAHE
+    - Finds tight bounding box around characters
+    - Resizes with aspect ratio preserved
+    - Pads to (target_h, max_w)
     
-    Assumes img is a 3-channel RGB image (per dataset.py logic)
-    Assumes text is darker than a lighter background.
+    img: RGB image (as in your dataset pipeline)
     """
-    
-    # --- 1. Trim Whitespace ---
-    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-    
-    # Use Otsu's method to automatically find the best threshold
-    # between the (darker) text and the (lighter) background.
-    # THRESH_BINARY_INV makes the text/noise 255 (active) and bg 0 (inactive).
-    _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 
-    # --- UPDATED BOUNDING BOX LOGIC ---
-    # Find all contours (shapes) in the thresholded image
-    contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    # -----------------------------
+    # 1. Remove black noise lines
+    # -----------------------------
+    # Black line is (0,0,0)
+    mask_black = cv2.inRange(img, (0, 0, 0), (40, 40, 40))
+    img_clean = cv2.inpaint(img, mask_black, 3, cv2.INPAINT_NS)
 
-    if contours:
-        # Find the bounding box of *all* contours combined
-        min_x, min_y = float('inf'), float('inf')
-        max_x, max_y = float('-inf'), float('-inf')
-        
-        for cnt in contours:
-            x, y, w, h = cv2.boundingRect(cnt)
-            min_x = min(min_x, x)
-            min_y = min(min_y, y)
-            max_x = max(max_x, x + w)
-            max_y = max(max_y, y + h)
-        
-        # Crop the original image based on the union of all bounding boxes
-        img_crop = img[min_y:max_y, min_x:max_x]
+    # -----------------------------
+    # 2. Convert to LAB & enhance pale colours
+    # -----------------------------
+    lab = cv2.cvtColor(img_clean, cv2.COLOR_RGB2LAB)
+    L, A, B = cv2.split(lab)
+
+    # combine A+B to make faint colours pop
+    ab_combo = cv2.addWeighted(A, 0.5, B, 0.5, 0)
+
+    # local contrast enhancement (critical for pale digits)
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+    enh = clahe.apply(ab_combo)
+
+    # -----------------------------
+    # 3. Adaptive threshold → clean mask for cropping
+    # -----------------------------
+    mask = cv2.adaptiveThreshold(
+        enh, 255,
+        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+        cv2.THRESH_BINARY_INV,
+        25, 3
+    )
+
+    # -----------------------------
+    # 4. Find tight bounding box
+    # -----------------------------
+    ys, xs = np.where(mask > 0)
+    if len(xs) == 0:
+        # fallback: no content detected
+        img_crop = img_clean
     else:
-        # Image was blank or something went wrong, use original
-        img_crop = img
-    # --- END UPDATE ---
+        top, bottom = ys.min(), ys.max()
+        left, right = xs.min(), xs.max()
+        img_crop = img_clean[top:bottom+1, left:right+1]
 
-    # --- 2. Resize and Pad (Corrected Logic) ---
-    h_crop, w_crop = img_crop.shape[:2]
+    # -----------------------------
+    # 5. Resize with aspect ratio
+    # -----------------------------
+    h, w = img_crop.shape[:2]
 
-    # Handle edge case where crop is empty
-    if h_crop == 0 or w_crop == 0:
-        img_crop = img
-        h_crop, w_crop = img_crop.shape[:2]
+    scale = min(target_h / h, max_w / w)
+    new_h = int(h * scale)
+    new_w = int(w * scale)
 
-    # Calculate scaling factors for height and width
-    scale_h = target_h / h_crop
-    scale_w = max_w / w_crop
-    
-    # Choose the *smaller* scaling factor to ensure the image fits
-    # inside (target_h, max_w) while maintaining aspect ratio
-    scale = min(scale_h, scale_w)
+    resized = cv2.resize(img_crop, (new_w, new_h), interpolation=cv2.INTER_AREA)
 
-    new_w = int(w_crop * scale)
-    new_h = int(h_crop * scale)
+    # -----------------------------
+    # 6. Pad to target size
+    # -----------------------------
+    canvas = np.full((target_h, max_w, 3), 255, dtype=np.uint8)
+    y0 = (target_h - new_h) // 2
+    x0 = (max_w - new_w) // 2
+    canvas[y0:y0+new_h, x0:x0+new_w] = resized
 
-    # Resize the cropped image
-    img_resized = cv2.resize(img_crop, (new_w, new_h))
-
-    # Calculate padding for width and height
-    pad_w = max_w - new_w
-    pad_h = target_h - new_h
-    
-    # Split height padding to center the image vertically
-    pad_top = pad_h // 2
-    pad_bot = pad_h - pad_top
-    
-    # Pad the image to the final (target_h, max_w) size
-    # Pad top/bottom with `pad_top`/`pad_bot`, pad right with `pad_w`
-    img_padded = cv2.copyMakeBorder(img_resized, pad_top, pad_bot, 0, pad_w,
-                                  cv2.BORDER_CONSTANT, value=(255, 255, 255)) 
-                                  
-    return img_padded, new_w # new_w is now the *scaled* width, not max_w
+    return canvas, new_w
 
 # This is mainly for converting colour to grayscale
 def basic_preprocess(img):

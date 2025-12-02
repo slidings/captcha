@@ -56,7 +56,7 @@ class CaptchaDataset(Dataset):
         if self.grayscale:
             img = basic_preprocess(img)
 
-        img_resized, (_,_,true_w,_) = resize_with_padding(img, self.h, self.max_w)
+        img_resized, true_w = keep_aspect_resize_pad(img, self.h, self.max_w)
         
         if self.aug_transform:
             # Apply the transform pipeline
