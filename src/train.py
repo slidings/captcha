@@ -144,7 +144,7 @@ def main():
     num_classes = len(ITOCH)
     model = CRNN(
         num_classes=num_classes,
-        input_channels=1 if is_grayscale else 3,
+        input_channels=1 if is_grayscale else 4, # additional for edge map,
         img_height=cfg["data"]["img_height"],
         cnn_out=cfg["model"]["cnn_out_channels"],
         lstm_hidden=cfg["model"]["lstm_hidden"],

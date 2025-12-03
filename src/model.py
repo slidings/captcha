@@ -60,11 +60,23 @@ class CRNN(nn.Module):
             ConvBlock(input_channels, 64), nn.MaxPool2d(2, 2),  # H/2
             ConvBlock(64, 128),            nn.MaxPool2d(2, 2),  # H/4
             ResidualBlock(128),
+            ResidualBlock(128),
             ConvBlock(128, cnn_out),
         )
         
-        downsampled_height = img_height // 4 
-        lstm_input_size = cnn_out * downsampled_height 
+        # ---- compute downsample factor from MaxPool2d layers ----
+        self.downsample_factor_h = 1
+        for m in self.cnn.modules():
+            if isinstance(m, nn.MaxPool2d):
+                # use stride in height; if tuple, take first
+                s = m.stride
+                if isinstance(s, tuple):
+                    self.downsample_factor_h *= s[0]
+                else:
+                    self.downsample_factor_h *= s
+
+        downsampled_height = img_height // self.downsample_factor_h
+        lstm_input_size = cnn_out * downsampled_height
 
         self.bi_lstm = nn.LSTM(input_size=lstm_input_size,
                                hidden_size=lstm_hidden,

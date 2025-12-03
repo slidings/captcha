@@ -10,7 +10,7 @@ from typing import List, Tuple, Dict
 from .image_clip import resize_with_padding
 from .utils import parse_label_from_name
 from .vocab import encode_label
-from .transforms import keep_aspect_resize_pad, to_float_tensor, basic_preprocess
+from .transforms import keep_aspect_resize_pad, to_float_tensor, basic_preprocess, add_edge_channel
 from torchvision import transforms
 
 class CaptchaDataset(Dataset):
@@ -29,13 +29,22 @@ class CaptchaDataset(Dataset):
             self.aug_transform = transforms.Compose([
                 transforms.ToPILImage(),
                 transforms.RandomApply([
-                    transforms.ColorJitter(0.1, 0.1, 0.1, 0.05)
+                    transforms.ColorJitter(
+                        brightness=0.4,   # allow darker
+                        contrast=0.4,
+                        saturation=0.4,
+                        hue=0.02
+                    )
+                ], p=0.7),
+                transforms.RandomApply([
+                    transforms.RandomAffine(
+                        degrees=2,
+                        translate=(0.02, 0.02),
+                        shear=3
+                    )
                 ], p=0.5),
                 transforms.RandomApply([
-                    transforms.RandomAffine(degrees=2, translate=(0.02, 0.02), shear=3)
-                ], p=0.5),
-                transforms.RandomApply([
-                    transforms.GaussianBlur((3, 3), sigma=(0.05, 0.2))
+                    transforms.GaussianBlur((3, 3), sigma=(0.05, 0.4))
                 ], p=0.5),
             ])
         else:
@@ -62,7 +71,11 @@ class CaptchaDataset(Dataset):
             # Apply the transform pipeline
             img_aug_pil = self.aug_transform(img_resized)
             # Convert PIL image back to OpenCV (numpy) format
-            img_resized = np.array(img_aug_pil)
+            img_resized = np.array(img_aug_pil.convert("RGB"))
+
+        if not self.grayscale:
+            # img_resized is RGB here → make it RGB+edge
+            img_resized = add_edge_channel(img_resized)
 
         # Convert to float tensor (CHW, normalized)
         tensor = to_float_tensor(img_resized)

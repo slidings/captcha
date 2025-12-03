@@ -13,13 +13,14 @@ from src.model import CRNN
 from src.vocab import BLANK, ITOCH
 from src.decode import greedy_decode
 from src.utils import set_seed
+from src.transforms import add_edge_channel   # <-- ensure available
 
 
 # ==================================================
-# Simple Levenshtein distance
+# Levenshtein (same as train)
 # ==================================================
 def levenshtein(a: str, b: str) -> int:
-    dp = [list(range(len(b)+1))]
+    dp = [list(range(len(b) + 1))]
     dp += [[i+1] + [0]*len(b) for i in range(len(a))]
     for i in range(1, len(a)+1):
         for j in range(1, len(b)+1):
@@ -32,17 +33,20 @@ def levenshtein(a: str, b: str) -> int:
     return dp[-1][-1]
 
 
-# Random from test set
+# ==================================================
+# Evaluation Loop
+# ==================================================
 def evaluate(model, loader, device, show_samples=10):
     model.eval()
-    total_chars, total_edits, total_exact = 0, 0, 0
+    total_chars = total_edits = total_exact = 0
     n_samples = 0
-    sample_buffer = []  # store all GT/pred pairs for random sampling
+
+    sample_buffer = []
     start_time = time.time()
 
     with torch.no_grad():
         for batch in tqdm(loader, desc="Evaluating", ncols=100):
-            images = batch["images"].to(device)
+            images = batch["images"].to(device)   # (B,C,H,W)
             gt_texts = batch["label_strs"]
 
             logits, _ = model(images)
@@ -56,18 +60,19 @@ def evaluate(model, loader, device, show_samples=10):
                 n_samples += 1
                 sample_buffer.append((gt, pred))
 
-    cer = total_edits / total_chars if total_chars > 0 else 1.0
-    exact = total_exact / max(n_samples, 1)
+    cer = total_edits / total_chars
+    exact = total_exact / n_samples
     elapsed = time.time() - start_time
 
-    print(f"\n✅ Evaluation complete in {elapsed:.1f}s")
-    print(f"🔹 CER={cer:.3f}, Exact={exact:.3f} (N={n_samples})\n")
+    print(f"\n=== Evaluation Complete ===")
+    print(f"Time: {elapsed:.1f}s")
+    print(f"CER:   {cer:.4f}")
+    print(f"Exact: {exact:.4f}  (N={n_samples})\n")
 
-    # Randomly show a few predictions
-    print("🔍 Random sample predictions:")
+    print("Random sample predictions:")
     for gt, pred in random.sample(sample_buffer, min(show_samples, len(sample_buffer))):
-        mark = "✓" if pred == gt else "✗"
-        print(f"GT: {gt:<10} | Pred: {pred:<10} {mark}")
+        ok = "✓" if pred == gt else "✗"
+        print(f"GT: {gt:<12} | Pred: {pred:<12} {ok}")
 
     return cer, exact
 
@@ -76,7 +81,7 @@ def evaluate(model, loader, device, show_samples=10):
 # Main
 # ==================================================
 def main():
-    # ---- Load config ----
+    # ---- Load Config ----
     with open("config.yaml", "r") as f:
         cfg = yaml.safe_load(f)
 
@@ -84,24 +89,42 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device:", device)
 
-    # ---- Dataset (test) ----
-    test_dir = "data/test"  # fixed path for evaluation
+    # ---- Dataset for Prediction ----
+    test_dir = "data/test"
+    print(f"Loading test images from {test_dir} ...")
+
     ds = CaptchaDataset(
         root_dir=test_dir,
         img_height=cfg["data"]["img_height"],
         max_width=cfg["data"]["max_width"],
-        grayscale=cfg["data"]["grayscale"]
+        grayscale=cfg["data"]["grayscale"],
+        is_train=False
     )
-    loader = DataLoader(ds, batch_size=cfg["train"]["batch_size"],
-                        shuffle=False, num_workers=cfg["data"]["num_workers"],
-                        pin_memory=True, collate_fn=collate_fn)
 
-    # ---- Model ----
-    is_grayscale = cfg["data"]["grayscale"]
+    loader = DataLoader(
+        ds,
+        batch_size=cfg["train"]["batch_size"],
+        shuffle=False,
+        num_workers=cfg["data"]["num_workers"],
+        pin_memory=True,
+        collate_fn=collate_fn
+    )
+
+    # ---- Determine Correct Input Channels ----
+    expected_channels = 1 if cfg["data"]["grayscale"] else 3
+
+    # If using add_edge_channel, expected is 4
+    if not cfg["data"]["grayscale"]:
+        print("⚠ Detected color mode → checking if edge channel required...")
+        expected_channels = 4  # RGB + Sobel
+
+    print(f"Model expects {expected_channels} channels.")
+
+    # ---- Build Model ----
     num_classes = len(ITOCH)
     model = CRNN(
         num_classes=num_classes,
-        input_channels=1 if is_grayscale else 3,
+        input_channels=expected_channels,
         img_height=cfg["data"]["img_height"],
         cnn_out=cfg["model"]["cnn_out_channels"],
         lstm_hidden=cfg["model"]["lstm_hidden"],
@@ -109,14 +132,14 @@ def main():
         dropout=cfg["model"]["dropout"]
     ).to(device)
 
-    # ---- Load best checkpoint ----
+    # ---- Load Checkpoint ----
     ckpt_path = os.path.join(cfg["log"]["ckpt_dir"], "best.pt")
     if not os.path.exists(ckpt_path):
-        raise FileNotFoundError(f"No best.pt found in {cfg['log']['ckpt_dir']}")
-    print(f"Loading model from {ckpt_path} ...")
+        raise FileNotFoundError(f"❌ No best.pt found at {ckpt_path}")
 
+    print(f"Loading weights from {ckpt_path} ...")
     ckpt = torch.load(ckpt_path, map_location=device)
-    model.load_state_dict(ckpt["model"])
+    model.load_state_dict(ckpt["model"], strict=True)
 
     # ---- Evaluate ----
     evaluate(model, loader, device, show_samples=10)

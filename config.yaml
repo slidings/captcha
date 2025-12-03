@@ -1,9 +1,8 @@
 seed: 42
 data:
   train_dir: "data/cleaned_train"
-  # Note that the image height and width must be proportionate to most of training data
-  img_height: 48
-  max_width: 256 #192 seems to be good middle ground
+  img_height: 64
+  max_width: 384 
   grayscale: false
   num_workers: 8
 
