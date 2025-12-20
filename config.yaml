@@ -1,4 +1,4 @@
-seed: 42
+seed: 99
 data:
   train_dir: "data/cleaned_train"
   img_height: 64

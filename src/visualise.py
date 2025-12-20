@@ -13,11 +13,11 @@ from src.model import CRNN
 from src.decode import greedy_decode
 from src.utils import set_seed
 from src.vocab import ITOCH
-from src.transforms import add_edge_channel    # IMPORTANT
+from src.transforms import add_edge_channel
 
 
-GRID_ROWS = 5
-GRID_COLS = 5
+GRID_ROWS = 3
+GRID_COLS = 4
 N_SAMPLES = GRID_ROWS * GRID_COLS
 
 
