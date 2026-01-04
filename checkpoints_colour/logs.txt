@@ -1,56 +1,1003 @@
-Epoch 01 | Loss(avg): 0.3892 | CER: 1.0000 | Exact: 0.0000 | ValSamples: 787 | Time: 46.6s
-Epoch 02 | Loss(avg): 0.3879 | CER: 1.0000 | Exact: 0.0000 | ValSamples: 787 | Time: 45.1s
-Epoch 03 | Loss(avg): 0.3849 | CER: 1.0000 | Exact: 0.0000 | ValSamples: 787 | Time: 45.2s
-Epoch 04 | Loss(avg): 0.3816 | CER: 1.0000 | Exact: 0.0000 | ValSamples: 787 | Time: 45.1s
-Epoch 05 | Loss(avg): 0.3806 | CER: 0.9640 | Exact: 0.0000 | ValSamples: 787 | Time: 44.9s
-Epoch 06 | Loss(avg): 0.3804 | CER: 0.9586 | Exact: 0.0000 | ValSamples: 787 | Time: 44.7s
-Epoch 07 | Loss(avg): 0.3790 | CER: 0.9571 | Exact: 0.0000 | ValSamples: 787 | Time: 44.9s
-Epoch 08 | Loss(avg): 0.3788 | CER: 0.9582 | Exact: 0.0000 | ValSamples: 787 | Time: 45.1s
-Epoch 01 | Loss(avg): 0.3838 | CER: 1.0000 | Exact: 0.0000 | ValSamples: 787 | Time: 45.7s
-Epoch 02 | Loss(avg): 0.3807 | CER: 1.0000 | Exact: 0.0000 | ValSamples: 787 | Time: 44.8s
-Epoch 03 | Loss(avg): 0.3792 | CER: 1.0000 | Exact: 0.0000 | ValSamples: 787 | Time: 45.1s
-Epoch 04 | Loss(avg): 0.3767 | CER: 0.9742 | Exact: 0.0000 | ValSamples: 787 | Time: 45.2s
-Epoch 05 | Loss(avg): 0.3761 | CER: 1.0000 | Exact: 0.0000 | ValSamples: 787 | Time: 45.6s
-Epoch 06 | Loss(avg): 0.3765 | CER: 0.9573 | Exact: 0.0000 | ValSamples: 787 | Time: 45.5s
-Epoch 07 | Loss(avg): 0.3744 | CER: 0.9601 | Exact: 0.0000 | ValSamples: 787 | Time: 45.7s
-Epoch 08 | Loss(avg): 0.3307 | CER: 0.9042 | Exact: 0.0000 | ValSamples: 787 | Time: 45.7s
-Epoch 09 | Loss(avg): 0.2039 | CER: 0.5309 | Exact: 0.0407 | ValSamples: 787 | Time: 48.3s
-Epoch 10 | Loss(avg): 0.1402 | CER: 0.3703 | Exact: 0.1626 | ValSamples: 787 | Time: 47.6s
-Epoch 11 | Loss(avg): 0.1127 | CER: 0.2886 | Exact: 0.2541 | ValSamples: 787 | Time: 48.2s
-Epoch 12 | Loss(avg): 0.0973 | CER: 0.2470 | Exact: 0.3189 | ValSamples: 787 | Time: 46.6s
-Epoch 13 | Loss(avg): 0.0889 | CER: 0.3453 | Exact: 0.1817 | ValSamples: 787 | Time: 46.5s
-Epoch 14 | Loss(avg): 0.0784 | CER: 0.1986 | Exact: 0.4257 | ValSamples: 787 | Time: 46.5s
-Epoch 15 | Loss(avg): 0.0723 | CER: 0.1948 | Exact: 0.4244 | ValSamples: 787 | Time: 46.0s
-Epoch 16 | Loss(avg): 0.0660 | CER: 0.1783 | Exact: 0.4651 | ValSamples: 787 | Time: 45.8s
-Epoch 17 | Loss(avg): 0.0598 | CER: 0.1692 | Exact: 0.4600 | ValSamples: 787 | Time: 45.6s
-Epoch 18 | Loss(avg): 0.0546 | CER: 0.1756 | Exact: 0.4422 | ValSamples: 787 | Time: 45.7s
-Epoch 19 | Loss(avg): 0.0568 | CER: 0.1583 | Exact: 0.5032 | ValSamples: 787 | Time: 45.4s
-Epoch 20 | Loss(avg): 0.0555 | CER: 0.1634 | Exact: 0.4752 | ValSamples: 787 | Time: 46.0s
-Epoch 21 | Loss(avg): 0.0494 | CER: 0.1651 | Exact: 0.5019 | ValSamples: 787 | Time: 45.0s
-Epoch 22 | Loss(avg): 0.0461 | CER: 0.2916 | Exact: 0.1982 | ValSamples: 787 | Time: 44.8s
-Epoch 23 | Loss(avg): 0.0422 | CER: 0.1391 | Exact: 0.5248 | ValSamples: 787 | Time: 45.2s
-Epoch 24 | Loss(avg): 0.0355 | CER: 0.2451 | Exact: 0.2973 | ValSamples: 787 | Time: 45.2s
-Epoch 25 | Loss(avg): 0.0342 | CER: 0.1474 | Exact: 0.5019 | ValSamples: 787 | Time: 45.7s
-Epoch 26 | Loss(avg): 0.0351 | CER: 0.1259 | Exact: 0.5667 | ValSamples: 787 | Time: 46.8s
-Epoch 27 | Loss(avg): 0.0340 | CER: 0.1301 | Exact: 0.5527 | ValSamples: 787 | Time: 46.0s
-Epoch 28 | Loss(avg): 0.0343 | CER: 0.1288 | Exact: 0.5591 | ValSamples: 787 | Time: 45.3s
-Epoch 29 | Loss(avg): 0.0337 | CER: 0.2099 | Exact: 0.3799 | ValSamples: 787 | Time: 45.2s
-Epoch 30 | Loss(avg): 0.0296 | CER: 0.1224 | Exact: 0.5731 | ValSamples: 787 | Time: 45.0s
-Epoch 31 | Loss(avg): 0.0273 | CER: 0.1160 | Exact: 0.5731 | ValSamples: 787 | Time: 45.5s
-Epoch 32 | Loss(avg): 0.0274 | CER: 0.1278 | Exact: 0.5565 | ValSamples: 787 | Time: 45.7s
-Epoch 33 | Loss(avg): 0.0274 | CER: 0.1192 | Exact: 0.5718 | ValSamples: 787 | Time: 46.3s
-Epoch 34 | Loss(avg): 0.0255 | CER: 0.1207 | Exact: 0.5769 | ValSamples: 787 | Time: 45.6s
-Epoch 35 | Loss(avg): 0.0248 | CER: 0.1169 | Exact: 0.5756 | ValSamples: 787 | Time: 46.1s
-Epoch 36 | Loss(avg): 0.0241 | CER: 0.1190 | Exact: 0.5743 | ValSamples: 787 | Time: 45.6s
-Epoch 37 | Loss(avg): 0.0200 | CER: 0.1197 | Exact: 0.5781 | ValSamples: 787 | Time: 46.9s
-Epoch 38 | Loss(avg): 0.0256 | CER: 0.1209 | Exact: 0.5756 | ValSamples: 787 | Time: 46.8s
-Epoch 39 | Loss(avg): 0.0204 | CER: 0.1156 | Exact: 0.5781 | ValSamples: 787 | Time: 46.7s
-Epoch 40 | Loss(avg): 0.0209 | CER: 0.1163 | Exact: 0.5794 | ValSamples: 787 | Time: 46.1s
-Epoch 41 | Loss(avg): 0.0224 | CER: 0.1154 | Exact: 0.5769 | ValSamples: 787 | Time: 46.4s
-Epoch 42 | Loss(avg): 0.0236 | CER: 0.1158 | Exact: 0.5731 | ValSamples: 787 | Time: 45.7s
-Epoch 43 | Loss(avg): 0.0220 | CER: 0.1139 | Exact: 0.5896 | ValSamples: 787 | Time: 50.2s
-Epoch 44 | Loss(avg): 0.0211 | CER: 0.1143 | Exact: 0.5807 | ValSamples: 787 | Time: 49.5s
-Epoch 45 | Loss(avg): 0.0194 | CER: 0.1143 | Exact: 0.5794 | ValSamples: 787 | Time: 51.9s
-Epoch 46 | Loss(avg): 0.0200 | CER: 0.1139 | Exact: 0.5909 | ValSamples: 787 | Time: 48.1s
-Epoch 47 | Loss(avg): 0.0213 | CER: 0.1133 | Exact: 0.5832 | ValSamples: 787 | Time: 46.7s
-Epoch 48 | Loss(avg): 0.0210 | CER: 0.1156 | Exact: 0.5845 | ValSamples: 787 | Time: 48.5s
+Note: This was manually copy pasted from the terminal 
+
+Epoch 30/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.70it/s, loss=0.4595]
+Epoch 30 completed in 23.7s
+GT: rs1z3    | Pred: r5uywzl3 ✗
+GT: 2gtxk    | Pred: 2gtxkw   ✗
+GT: eo5uwsd5 | Pred: elobuvsdb ✗
+GT: fnhhikff | Pred: fwnhhikfufw ✗
+GT: a6z0t    | Pred: uvbw1dvtw ✗
+Validation done in 1.7s — CER=0.327, Exact=0.183 (N=787)
+Epoch 30: CER=0.327, Exact=0.183 (N=787)
+Saved checkpoint: checkpoints_colour/epoch30.pt
+
+Epoch 31/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.66it/s, loss=0.4428]
+Epoch 31 completed in 23.9s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eobuvsdb ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.146, Exact=0.517 (N=787)
+Epoch 31: CER=0.146, Exact=0.517 (N=787)
+Saved checkpoint: checkpoints_colour/epoch31.pt
+
+Epoch 32/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.74it/s, loss=0.4227]
+Epoch 32 completed in 23.5s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2qtxm    ✗
+GT: eo5uwsd5 | Pred: eobuvsdb ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.7s — CER=0.153, Exact=0.510 (N=787)
+Epoch 32: CER=0.153, Exact=0.510 (N=787)
+Saved checkpoint: checkpoints_colour/epoch32.pt
+
+Epoch 33/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.80it/s, loss=0.4002]
+Epoch 33 completed in 23.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2qtxk    ✗
+GT: eo5uwsd5 | Pred: eo5avsd6 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.151, Exact=0.513 (N=787)
+Epoch 33: CER=0.151, Exact=0.513 (N=787)
+Saved checkpoint: checkpoints_colour/epoch33.pt
+
+Epoch 34/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.64it/s, loss=0.4235]
+Epoch 34 completed in 24.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54vsd6 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: 161dt    ✗
+Validation done in 1.6s — CER=0.152, Exact=0.498 (N=787)
+Epoch 34: CER=0.152, Exact=0.498 (N=787)
+Saved checkpoint: checkpoints_colour/epoch34.pt
+
+Epoch 35/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.82it/s, loss=0.4080]
+Epoch 35 completed in 23.1s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eobavsdb ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.142, Exact=0.535 (N=787)
+Epoch 35: CER=0.142, Exact=0.535 (N=787)
+Saved checkpoint: checkpoints_colour/epoch35.pt
+
+Epoch 36/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.78it/s, loss=0.3735]
+Epoch 36 completed in 23.3s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eobuvsd8 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.136, Exact=0.537 (N=787)
+Epoch 36: CER=0.136, Exact=0.537 (N=787)
+Saved checkpoint: checkpoints_colour/epoch36.pt
+
+Epoch 37/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.70it/s, loss=0.3790]
+Epoch 37 completed in 23.7s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2qtxh    ✗
+GT: eo5uwsd5 | Pred: eob4vsdb ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.7s — CER=0.143, Exact=0.511 (N=787)
+Epoch 37: CER=0.143, Exact=0.511 (N=787)
+Saved checkpoint: checkpoints_colour/epoch37.pt
+
+Epoch 38/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.64it/s, loss=0.3657]
+Epoch 38 completed in 24.0s
+GT: rs1z3    | Pred: rsjz3    ✗
+GT: 2gtxk    | Pred: 2gtxka   ✗
+GT: eo5uwsd5 | Pred: ea54vsd67 ✗
+GT: fnhhikff | Pred: fnhhikfe4 ✗
+GT: a6z0t    | Pred: a6zdt4   ✗
+Validation done in 1.6s — CER=0.273, Exact=0.183 (N=787)
+Epoch 38: CER=0.273, Exact=0.183 (N=787)
+Saved checkpoint: checkpoints_colour/epoch38.pt
+
+Epoch 39/120: 100%|██████████████████████████████████| 111/111 [00:25<00:00,  4.42it/s, loss=0.3245]
+Epoch 39 completed in 25.2s
+GT: rs1z3    | Pred: rsyz3    ✗
+GT: 2gtxk    | Pred: 2gtxko   ✗
+GT: eo5uwsd5 | Pred: eo54vsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t0   ✗
+Validation done in 1.6s — CER=0.162, Exact=0.483 (N=787)
+Epoch 39: CER=0.162, Exact=0.483 (N=787)
+Saved checkpoint: checkpoints_colour/epoch39.pt
+
+Epoch 40/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.75it/s, loss=0.3410]
+Epoch 40 completed in 23.4s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54vsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.143, Exact=0.510 (N=787)
+Epoch 40: CER=0.143, Exact=0.510 (N=787)
+Saved checkpoint: checkpoints_colour/epoch40.pt
+
+Epoch 41/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.74it/s, loss=0.3258]
+Epoch 41 completed in 23.5s
+GT: rs1z3    | Pred: rsyz3    ✗
+GT: 2gtxk    | Pred: 2gtxx    ✗
+GT: eo5uwsd5 | Pred: ea54vsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.135, Exact=0.535 (N=787)
+Epoch 41: CER=0.135, Exact=0.535 (N=787)
+Saved checkpoint: checkpoints_colour/epoch41.pt
+
+Epoch 42/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.68it/s, loss=0.3228]
+Epoch 42 completed in 23.8s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2qtxk    ✗
+GT: eo5uwsd5 | Pred: eobuvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.129, Exact=0.549 (N=787)
+Epoch 42: CER=0.129, Exact=0.549 (N=787)
+Saved checkpoint: checkpoints_colour/epoch42.pt
+
+Epoch 43/120: 100%|██████████████████████████████████| 111/111 [00:22<00:00,  4.84it/s, loss=0.3120]
+Epoch 43 completed in 23.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eobuwsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.131, Exact=0.549 (N=787)
+Epoch 43: CER=0.131, Exact=0.549 (N=787)
+Saved checkpoint: checkpoints_colour/epoch43.pt
+
+Epoch 44/120: 100%|██████████████████████████████████| 111/111 [00:25<00:00,  4.41it/s, loss=0.3039]
+Epoch 44 completed in 25.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: tea54vsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 0.7s — CER=0.168, Exact=0.471 (N=787)
+Epoch 44: CER=0.168, Exact=0.471 (N=787)
+Saved checkpoint: checkpoints_colour/epoch44.pt
+
+Epoch 45/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.45it/s, loss=0.3061]
+Epoch 45 completed in 25.0s
+GT: rs1z3    | Pred: rsyz3    ✗
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo54vsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.152, Exact=0.510 (N=787)
+Epoch 45: CER=0.152, Exact=0.510 (N=787)
+Saved checkpoint: checkpoints_colour/epoch45.pt
+
+Epoch 46/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.57it/s, loss=0.2872]
+Epoch 46 completed in 24.4s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54vsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.7s — CER=0.124, Exact=0.579 (N=787)
+Epoch 46: CER=0.124, Exact=0.579 (N=787)
+Saved checkpoint: checkpoints_colour/epoch46.pt
+
+Epoch 47/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.61it/s, loss=0.2665]
+Epoch 47 completed in 24.1s
+GT: rs1z3    | Pred: rsyz3m   ✗
+GT: 2gtxk    | Pred: 2sgtxmmm ✗
+GT: eo5uwsd5 | Pred: eo5uv5d5m ✗
+GT: fnhhikff | Pred: fnhhikffm ✗
+GT: a6z0t    | Pred: a6lzdtm  ✗
+Validation done in 1.7s — CER=0.369, Exact=0.009 (N=787)
+Epoch 47: CER=0.369, Exact=0.009 (N=787)
+Saved checkpoint: checkpoints_colour/epoch47.pt
+
+Epoch 48/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.68it/s, loss=0.2750]
+Epoch 48 completed in 23.8s
+GT: rs1z3    | Pred: mrsyz3   ✗
+GT: 2gtxk    | Pred: m2vrtxmm ✗
+GT: eo5uwsd5 | Pred: meab4vadbm ✗
+GT: fnhhikff | Pred: mfnnhnhiaknffm ✗
+GT: a6z0t    | Pred: ma6nzdtm ✗
+Validation done in 1.5s — CER=0.606, Exact=0.000 (N=787)
+Epoch 48: CER=0.606, Exact=0.000 (N=787)
+Saved checkpoint: checkpoints_colour/epoch48.pt
+
+Epoch 49/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.65it/s, loss=0.2502]
+Epoch 49 completed in 24.0s
+GT: rs1z3    | Pred: rsyz3    ✗
+GT: 2gtxk    | Pred: 2gtxm    ✗
+GT: eo5uwsd5 | Pred: eob4wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.131, Exact=0.546 (N=787)
+Epoch 49: CER=0.131, Exact=0.546 (N=787)
+Saved checkpoint: checkpoints_colour/epoch49.pt
+
+Epoch 50/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.44it/s, loss=0.2660]
+Epoch 50 completed in 25.1s
+GT: rs1z3    | Pred: rsyz3    ✗
+GT: 2gtxk    | Pred: 2gtxkm   ✗
+GT: eo5uwsd5 | Pred: eo5uvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 0.6s — CER=0.161, Exact=0.470 (N=787)
+Epoch 50: CER=0.161, Exact=0.470 (N=787)
+Saved checkpoint: checkpoints_colour/epoch50.pt
+
+Epoch 51/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.52it/s, loss=0.2591]
+Epoch 51 completed in 24.6s
+GT: rs1z3    | Pred: rs4z3    ✗
+GT: 2gtxk    | Pred: 2gtxm    ✗
+GT: eo5uwsd5 | Pred: eo5uvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.119, Exact=0.582 (N=787)
+Epoch 51: CER=0.119, Exact=0.582 (N=787)
+Saved checkpoint: checkpoints_colour/epoch51.pt
+
+Epoch 52/120: 100%|██████████████████████████████████| 111/111 [00:22<00:00,  4.84it/s, loss=0.2435]
+Epoch 52 completed in 23.0s
+GT: rs1z3    | Pred: rs4z3    ✗
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.156, Exact=0.496 (N=787)
+Epoch 52: CER=0.156, Exact=0.496 (N=787)
+Saved checkpoint: checkpoints_colour/epoch52.pt
+
+Epoch 53/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.72it/s, loss=0.2335]
+Epoch 53 completed in 23.6s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.113, Exact=0.593 (N=787)
+Epoch 53: CER=0.113, Exact=0.593 (N=787)
+Saved checkpoint: checkpoints_colour/epoch53.pt
+
+Epoch 54/120: 100%|██████████████████████████████████| 111/111 [00:22<00:00,  4.84it/s, loss=0.2380]
+Epoch 54 completed in 23.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eobuvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.110, Exact=0.604 (N=787)
+Epoch 54: CER=0.110, Exact=0.604 (N=787)
+Saved checkpoint: checkpoints_colour/epoch54.pt
+
+Epoch 55/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.70it/s, loss=0.2179]
+Epoch 55 completed in 23.7s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54v3d5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.123, Exact=0.579 (N=787)
+Epoch 55: CER=0.123, Exact=0.579 (N=787)
+Saved checkpoint: checkpoints_colour/epoch55.pt
+
+Epoch 56/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.51it/s, loss=0.2389]
+Epoch 56 completed in 24.7s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eob4vad5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.121, Exact=0.584 (N=787)
+Epoch 56: CER=0.121, Exact=0.584 (N=787)
+Saved checkpoint: checkpoints_colour/epoch56.pt
+
+Epoch 57/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.63it/s, loss=0.2182]
+Epoch 57 completed in 24.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.138, Exact=0.517 (N=787)
+Epoch 57: CER=0.138, Exact=0.517 (N=787)
+Saved checkpoint: checkpoints_colour/epoch57.pt
+
+Epoch 58/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.62it/s, loss=0.2253]
+Epoch 58 completed in 24.1s
+GT: rs1z3    | Pred: rsynz3   ✗
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eai51v3d5n ✗
+GT: fnhhikff | Pred: fnnhhikfnfn ✗
+GT: a6z0t    | Pred: a6nzndntn ✗
+Validation done in 1.6s — CER=0.347, Exact=0.163 (N=787)
+Epoch 58: CER=0.347, Exact=0.163 (N=787)
+Saved checkpoint: checkpoints_colour/epoch58.pt
+
+Epoch 59/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.66it/s, loss=0.1971]
+Epoch 59 completed in 23.9s
+GT: rs1z3    | Pred: rsy1z3   ✗
+GT: 2gtxk    | Pred: 2gtxx    ✗
+GT: eo5uwsd5 | Pred: eloi5luvsd15 ✗
+GT: fnhhikff | Pred: fanhhiakaff ✗
+GT: a6z0t    | Pred: a6az0ht  ✗
+Validation done in 1.6s — CER=0.366, Exact=0.179 (N=787)
+Epoch 59: CER=0.366, Exact=0.179 (N=787)
+Saved checkpoint: checkpoints_colour/epoch59.pt
+
+Epoch 60/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.69it/s, loss=0.2049]
+Epoch 60 completed in 23.7s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.116, Exact=0.584 (N=787)
+Epoch 60: CER=0.116, Exact=0.584 (N=787)
+Saved checkpoint: checkpoints_colour/epoch60.pt
+
+Epoch 61/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.49it/s, loss=0.1573]
+Epoch 61 completed in 24.8s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 0.8s — CER=0.106, Exact=0.618 (N=787)
+Epoch 61: CER=0.106, Exact=0.618 (N=787)
+Saved checkpoint: checkpoints_colour/epoch61.pt
+
+Epoch 62/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.45it/s, loss=0.1609]
+Epoch 62 completed in 25.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54vsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.5s — CER=0.107, Exact=0.607 (N=787)
+Epoch 62: CER=0.107, Exact=0.607 (N=787)
+Saved checkpoint: checkpoints_colour/epoch62.pt
+
+Epoch 63/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.72it/s, loss=0.1571]
+Epoch 63 completed in 23.6s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo54vsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.9s — CER=0.115, Exact=0.584 (N=787)
+Epoch 63: CER=0.115, Exact=0.584 (N=787)
+Saved checkpoint: checkpoints_colour/epoch63.pt
+
+Epoch 64/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.69it/s, loss=0.1435]
+Epoch 64 completed in 23.8s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.108, Exact=0.615 (N=787)
+Epoch 64: CER=0.108, Exact=0.615 (N=787)
+Saved checkpoint: checkpoints_colour/epoch64.pt
+
+Epoch 65/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.65it/s, loss=0.1554]
+Epoch 65 completed in 24.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo54vsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.8s — CER=0.109, Exact=0.605 (N=787)
+Epoch 65: CER=0.109, Exact=0.605 (N=787)
+Saved checkpoint: checkpoints_colour/epoch65.pt
+
+Epoch 66/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.74it/s, loss=0.1587]
+Epoch 66 completed in 23.5s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.8s — CER=0.110, Exact=0.607 (N=787)
+Epoch 66: CER=0.110, Exact=0.607 (N=787)
+Saved checkpoint: checkpoints_colour/epoch66.pt
+
+Epoch 67/120: 100%|██████████████████████████████████| 111/111 [00:25<00:00,  4.41it/s, loss=0.1428]
+Epoch 67 completed in 25.3s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.107, Exact=0.602 (N=787)
+Epoch 67: CER=0.107, Exact=0.602 (N=787)
+Saved checkpoint: checkpoints_colour/epoch67.pt
+
+Epoch 68/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.49it/s, loss=0.1382]
+Epoch 68 completed in 24.8s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.7s — CER=0.107, Exact=0.602 (N=787)
+Epoch 68: CER=0.107, Exact=0.602 (N=787)
+Saved checkpoint: checkpoints_colour/epoch68.pt
+
+Epoch 69/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.67it/s, loss=0.1148]
+Epoch 69 completed in 23.8s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.107, Exact=0.606 (N=787)
+Epoch 69: CER=0.107, Exact=0.606 (N=787)
+Saved checkpoint: checkpoints_colour/epoch69.pt
+
+Epoch 70/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.78it/s, loss=0.1297]
+Epoch 70 completed in 23.3s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.107, Exact=0.607 (N=787)
+Epoch 70: CER=0.107, Exact=0.607 (N=787)
+Saved checkpoint: checkpoints_colour/epoch70.pt
+
+Epoch 71/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.66it/s, loss=0.1293]
+Epoch 71 completed in 23.9s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eobuwsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.105, Exact=0.612 (N=787)
+Epoch 71: CER=0.105, Exact=0.612 (N=787)
+Saved checkpoint: checkpoints_colour/epoch71.pt
+
+Epoch 72/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.70it/s, loss=0.1222]
+Epoch 72 completed in 23.7s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.106, Exact=0.615 (N=787)
+Epoch 72: CER=0.106, Exact=0.615 (N=787)
+Saved checkpoint: checkpoints_colour/epoch72.pt
+
+Epoch 73/120: 100%|██████████████████████████████████| 111/111 [00:25<00:00,  4.41it/s, loss=0.1101]
+Epoch 73 completed in 25.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.105, Exact=0.624 (N=787)
+Epoch 73: CER=0.105, Exact=0.624 (N=787)
+Saved checkpoint: checkpoints_colour/epoch73.pt
+
+Epoch 74/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.64it/s, loss=0.1118]
+Epoch 74 completed in 24.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo5uwvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.108, Exact=0.605 (N=787)
+Epoch 74: CER=0.108, Exact=0.605 (N=787)
+Saved checkpoint: checkpoints_colour/epoch74.pt
+
+Epoch 75/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.74it/s, loss=0.1194]
+Epoch 75 completed in 23.5s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.103, Exact=0.624 (N=787)
+Epoch 75: CER=0.103, Exact=0.624 (N=787)
+Saved checkpoint: checkpoints_colour/epoch75.pt
+
+Epoch 76/120: 100%|██████████████████████████████████| 111/111 [00:22<00:00,  4.84it/s, loss=0.1064]
+Epoch 76 completed in 23.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.102, Exact=0.619 (N=787)
+Epoch 76: CER=0.102, Exact=0.619 (N=787)
+Saved checkpoint: checkpoints_colour/epoch76.pt
+
+Epoch 77/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.75it/s, loss=0.1158]
+Epoch 77 completed in 23.4s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.7s — CER=0.109, Exact=0.602 (N=787)
+Epoch 77: CER=0.109, Exact=0.602 (N=787)
+Saved checkpoint: checkpoints_colour/epoch77.pt
+
+Epoch 78/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.54it/s, loss=0.1169]
+Epoch 78 completed in 24.5s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.106, Exact=0.620 (N=787)
+Epoch 78: CER=0.106, Exact=0.620 (N=787)
+Saved checkpoint: checkpoints_colour/epoch78.pt
+
+Epoch 79/120: 100%|██████████████████████████████████| 111/111 [00:25<00:00,  4.41it/s, loss=0.1022]
+Epoch 79 completed in 25.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.7s — CER=0.104, Exact=0.616 (N=787)
+Epoch 79: CER=0.104, Exact=0.616 (N=787)
+Saved checkpoint: checkpoints_colour/epoch79.pt
+
+Epoch 80/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.63it/s, loss=0.1115]
+Epoch 80 completed in 24.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.108, Exact=0.611 (N=787)
+Epoch 80: CER=0.108, Exact=0.611 (N=787)
+Saved checkpoint: checkpoints_colour/epoch80.pt
+
+Epoch 81/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.68it/s, loss=0.1033]
+Epoch 81 completed in 23.8s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.100, Exact=0.632 (N=787)
+Epoch 81: CER=0.100, Exact=0.632 (N=787)
+Saved checkpoint: checkpoints_colour/epoch81.pt
+
+Epoch 82/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.82it/s, loss=0.1083]
+Epoch 82 completed in 23.1s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxh    ✗
+GT: eo5uwsd5 | Pred: eo5uvsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.102, Exact=0.614 (N=787)
+Epoch 82: CER=0.102, Exact=0.614 (N=787)
+Saved checkpoint: checkpoints_colour/epoch82.pt
+
+Epoch 83/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.72it/s, loss=0.1150]
+Epoch 83 completed in 23.6s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.100, Exact=0.635 (N=787)
+Epoch 83: CER=0.100, Exact=0.635 (N=787)
+Saved checkpoint: checkpoints_colour/epoch83.pt
+
+Epoch 84/120: 100%|██████████████████████████████████| 111/111 [00:25<00:00,  4.43it/s, loss=0.1094]
+Epoch 84 completed in 25.1s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.7s — CER=0.100, Exact=0.624 (N=787)
+Epoch 84: CER=0.100, Exact=0.624 (N=787)
+Saved checkpoint: checkpoints_colour/epoch84.pt
+
+Epoch 85/120: 100%|██████████████████████████████████| 111/111 [00:25<00:00,  4.36it/s, loss=0.1022]
+Epoch 85 completed in 25.5s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.102, Exact=0.628 (N=787)
+Epoch 85: CER=0.102, Exact=0.628 (N=787)
+Saved checkpoint: checkpoints_colour/epoch85.pt
+
+Epoch 86/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.58it/s, loss=0.1078]
+Epoch 86 completed in 24.3s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.7s — CER=0.111, Exact=0.601 (N=787)
+Epoch 86: CER=0.111, Exact=0.601 (N=787)
+Saved checkpoint: checkpoints_colour/epoch86.pt
+
+Epoch 87/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.75it/s, loss=0.0955]
+Epoch 87 completed in 23.4s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.104, Exact=0.618 (N=787)
+Epoch 87: CER=0.104, Exact=0.618 (N=787)
+Saved checkpoint: checkpoints_colour/epoch87.pt
+
+Epoch 88/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.79it/s, loss=0.0976]
+Epoch 88 completed in 23.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.101, Exact=0.621 (N=787)
+Epoch 88: CER=0.101, Exact=0.621 (N=787)
+Saved checkpoint: checkpoints_colour/epoch88.pt
+
+Epoch 89/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.59it/s, loss=0.1009]
+Epoch 89 completed in 24.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.103, Exact=0.621 (N=787)
+Epoch 89: CER=0.103, Exact=0.621 (N=787)
+Saved checkpoint: checkpoints_colour/epoch89.pt
+
+Epoch 90/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.68it/s, loss=0.0944]
+Epoch 90 completed in 23.8s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.5s — CER=0.100, Exact=0.628 (N=787)
+Epoch 90: CER=0.100, Exact=0.628 (N=787)
+Saved checkpoint: checkpoints_colour/epoch90.pt
+
+Epoch 91/120: 100%|██████████████████████████████████| 111/111 [00:22<00:00,  4.85it/s, loss=0.0928]
+Epoch 91 completed in 22.9s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.099, Exact=0.632 (N=787)
+Epoch 91: CER=0.099, Exact=0.632 (N=787)
+Saved checkpoint: checkpoints_colour/epoch91.pt
+
+Epoch 92/120: 100%|██████████████████████████████████| 111/111 [00:22<00:00,  4.84it/s, loss=0.0926]
+Epoch 92 completed in 23.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.099, Exact=0.633 (N=787)
+Epoch 92: CER=0.099, Exact=0.633 (N=787)
+Saved checkpoint: checkpoints_colour/epoch92.pt
+
+Epoch 93/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.80it/s, loss=0.0933]
+Epoch 93 completed in 23.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.7s — CER=0.101, Exact=0.619 (N=787)
+Epoch 93: CER=0.101, Exact=0.619 (N=787)
+Saved checkpoint: checkpoints_colour/epoch93.pt
+
+Epoch 94/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.66it/s, loss=0.0953]
+Epoch 94 completed in 23.9s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.5s — CER=0.102, Exact=0.625 (N=787)
+Epoch 94: CER=0.102, Exact=0.625 (N=787)
+Saved checkpoint: checkpoints_colour/epoch94.pt
+
+Epoch 95/120: 100%|██████████████████████████████████| 111/111 [00:24<00:00,  4.58it/s, loss=0.0964]
+Epoch 95 completed in 24.3s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.7s — CER=0.099, Exact=0.632 (N=787)
+Epoch 95: CER=0.099, Exact=0.632 (N=787)
+Saved checkpoint: checkpoints_colour/epoch95.pt
+
+Epoch 96/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.71it/s, loss=0.1098]
+Epoch 96 completed in 23.7s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.7s — CER=0.096, Exact=0.644 (N=787)
+Epoch 96: CER=0.096, Exact=0.644 (N=787)
+Saved checkpoint: checkpoints_colour/epoch96.pt
+
+Epoch 97/120: 100%|██████████████████████████████████| 111/111 [00:22<00:00,  4.86it/s, loss=0.0903]
+Epoch 97 completed in 22.9s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.097, Exact=0.640 (N=787)
+Epoch 97: CER=0.097, Exact=0.640 (N=787)
+Saved checkpoint: checkpoints_colour/epoch97.pt
+
+Epoch 98/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.71it/s, loss=0.0927]
+Epoch 98 completed in 23.6s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.100, Exact=0.639 (N=787)
+Epoch 98: CER=0.100, Exact=0.639 (N=787)
+Saved checkpoint: checkpoints_colour/epoch98.pt
+
+Epoch 99/120: 100%|██████████████████████████████████| 111/111 [00:23<00:00,  4.70it/s, loss=0.0888]
+Epoch 99 completed in 23.7s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.5s — CER=0.099, Exact=0.638 (N=787)
+Epoch 99: CER=0.099, Exact=0.638 (N=787)
+Saved checkpoint: checkpoints_colour/epoch99.pt
+
+Epoch 100/120: 100%|█████████████████████████████████| 111/111 [00:24<00:00,  4.62it/s, loss=0.0882]
+Epoch 100 completed in 24.1s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 0.6s — CER=0.099, Exact=0.633 (N=787)
+Epoch 100: CER=0.099, Exact=0.633 (N=787)
+Saved checkpoint: checkpoints_colour/epoch100.pt
+
+Epoch 101/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.64it/s, loss=0.0853]
+Epoch 101 completed in 24.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.5s — CER=0.102, Exact=0.619 (N=787)
+Epoch 101: CER=0.102, Exact=0.619 (N=787)
+Saved checkpoint: checkpoints_colour/epoch101.pt
+
+Epoch 102/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.79it/s, loss=0.0901]
+Epoch 102 completed in 23.2s
+GT: rs1z3    | Pred: rs4z3    ✗
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhiakff ✗
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.5s — CER=0.130, Exact=0.527 (N=787)
+Epoch 102: CER=0.130, Exact=0.527 (N=787)
+Saved checkpoint: checkpoints_colour/epoch102.pt
+
+Epoch 103/120: 100%|█████████████████████████████████| 111/111 [00:22<00:00,  4.86it/s, loss=0.0818]
+Epoch 103 completed in 22.9s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.099, Exact=0.635 (N=787)
+Epoch 103: CER=0.099, Exact=0.635 (N=787)
+Saved checkpoint: checkpoints_colour/epoch103.pt
+
+Epoch 104/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.81it/s, loss=0.0759]
+Epoch 104 completed in 23.1s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.5s — CER=0.100, Exact=0.633 (N=787)
+Epoch 104: CER=0.100, Exact=0.633 (N=787)
+Saved checkpoint: checkpoints_colour/epoch104.pt
+
+Epoch 105/120: 100%|█████████████████████████████████| 111/111 [00:24<00:00,  4.61it/s, loss=0.0831]
+Epoch 105 completed in 24.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 0.5s — CER=0.098, Exact=0.629 (N=787)
+Epoch 105: CER=0.098, Exact=0.629 (N=787)
+Saved checkpoint: checkpoints_colour/epoch105.pt
+
+(best) 
+Epoch 106/120: 100%|█████████████████████████████████| 111/111 [00:25<00:00,  4.42it/s, loss=0.0843]
+Epoch 106 completed in 25.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.097, Exact=0.643 (N=787)
+Epoch 106: CER=0.097, Exact=0.643 (N=787)
+Saved checkpoint: checkpoints_colour/epoch106.pt
+
+Epoch 107/120: 100%|█████████████████████████████████| 111/111 [00:24<00:00,  4.55it/s, loss=0.0823]
+Epoch 107 completed in 24.5s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.098, Exact=0.634 (N=787)
+Epoch 107: CER=0.098, Exact=0.634 (N=787)
+Saved checkpoint: checkpoints_colour/epoch107.pt
+
+Epoch 108/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.77it/s, loss=0.0850]
+Epoch 108 completed in 23.3s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.099, Exact=0.639 (N=787)
+Epoch 108: CER=0.099, Exact=0.639 (N=787)
+Saved checkpoint: checkpoints_colour/epoch108.pt
+
+Epoch 109/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.70it/s, loss=0.0726]
+Epoch 109 completed in 23.7s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.099, Exact=0.635 (N=787)
+Epoch 109: CER=0.099, Exact=0.635 (N=787)
+Saved checkpoint: checkpoints_colour/epoch109.pt
+
+Epoch 110/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.72it/s, loss=0.0741]
+Epoch 110 completed in 23.6s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.099, Exact=0.635 (N=787)
+Epoch 110: CER=0.099, Exact=0.635 (N=787)
+Saved checkpoint: checkpoints_colour/epoch110.pt
+
+Epoch 111/120: 100%|█████████████████████████████████| 111/111 [00:24<00:00,  4.56it/s, loss=0.0833]
+Epoch 111 completed in 24.4s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.5s — CER=0.100, Exact=0.629 (N=787)
+Epoch 111: CER=0.100, Exact=0.629 (N=787)
+Saved checkpoint: checkpoints_colour/epoch111.pt
+
+Epoch 112/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.69it/s, loss=0.0790]
+Epoch 112 completed in 23.8s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.4s — CER=0.100, Exact=0.633 (N=787)
+Epoch 112: CER=0.100, Exact=0.633 (N=787)
+Saved checkpoint: checkpoints_colour/epoch112.pt
+
+Epoch 113/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.74it/s, loss=0.0815]
+Epoch 113 completed in 23.5s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.099, Exact=0.640 (N=787)
+Epoch 113: CER=0.099, Exact=0.640 (N=787)
+Saved checkpoint: checkpoints_colour/epoch113.pt
+
+Epoch 114/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.65it/s, loss=0.0907]
+Epoch 114 completed in 24.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6zdt    ✗
+Validation done in 1.6s — CER=0.097, Exact=0.640 (N=787)
+Epoch 114: CER=0.097, Exact=0.640 (N=787)
+Saved checkpoint: checkpoints_colour/epoch114.pt
+
+Epoch 115/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.64it/s, loss=0.0825]
+Epoch 115 completed in 24.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.097, Exact=0.642 (N=787)
+Epoch 115: CER=0.097, Exact=0.642 (N=787)
+Saved checkpoint: checkpoints_colour/epoch115.pt
+
+Epoch 116/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.66it/s, loss=0.0766]
+Epoch 116 completed in 23.9s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.098, Exact=0.638 (N=787)
+Epoch 116: CER=0.098, Exact=0.638 (N=787)
+Saved checkpoint: checkpoints_colour/epoch116.pt
+
+Epoch 117/120: 100%|█████████████████████████████████| 111/111 [00:25<00:00,  4.41it/s, loss=0.0713]
+Epoch 117 completed in 25.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.5s — CER=0.097, Exact=0.639 (N=787)
+Epoch 117: CER=0.097, Exact=0.639 (N=787)
+Saved checkpoint: checkpoints_colour/epoch117.pt
+
+Epoch 118/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.80it/s, loss=0.0775]
+Epoch 118 completed in 23.2s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.7s — CER=0.098, Exact=0.640 (N=787)
+Epoch 118: CER=0.098, Exact=0.640 (N=787)
+Saved checkpoint: checkpoints_colour/epoch118.pt
+
+Epoch 119/120: 100%|█████████████████████████████████| 111/111 [00:23<00:00,  4.77it/s, loss=0.0781]
+Epoch 119 completed in 23.3s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo5uwsd5 ✓
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.6s — CER=0.099, Exact=0.637 (N=787)
+Epoch 119: CER=0.099, Exact=0.637 (N=787)
+Saved checkpoint: checkpoints_colour/epoch119.pt
+
+Epoch 120/120: 100%|█████████████████████████████████| 111/111 [00:22<00:00,  4.83it/s, loss=0.0838]
+Epoch 120 completed in 23.0s
+GT: rs1z3    | Pred: rs1z3    ✓
+GT: 2gtxk    | Pred: 2gtxk    ✓
+GT: eo5uwsd5 | Pred: eo54wsd5 ✗
+GT: fnhhikff | Pred: fnhhikff ✓
+GT: a6z0t    | Pred: a6z0t    ✓
+Validation done in 1.5s — CER=0.098, Exact=0.642 (N=787)
+Epoch 120: CER=0.098, Exact=0.642 (N=787)
+Saved checkpoint: checkpoints_colour/epoch120.pt

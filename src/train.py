@@ -175,7 +175,7 @@ def main():
         optimizer,
         mode="min",      # lower CER is better
         factor=0.5,      # reduce LR by half when plateauing
-        patience=2,      # wait 2 epochs before reducing
+        patience=5,      # wait 2 epochs before reducing
     )
 
     ctc_loss = nn.CTCLoss(blank=BLANK, zero_infinity=True)
